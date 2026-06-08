@@ -1,0 +1,864 @@
+[
+  {
+    "query": "object:kettle",
+    "object": {
+      "name": "kettle",
+      "aliases": [
+        "kettle"
+      ],
+      "first_seen": "72857807732824",
+      "last_seen": "72905804784472",
+      "observations": 5,
+      "provenance": "caption.objects"
+    },
+    "timeline": [
+      {
+        "timestamp": "72857807732824",
+        "segment_id": 0,
+        "subtask": "Pick up and position kettle",
+        "objects": [
+          "bottle",
+          "coffee dripper",
+          "kettle",
+          "scale"
+        ],
+        "interaction_text": "",
+        "action": "Pick up kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.124226,
+            -0.071547,
+            0.167756
+          ],
+          "quaternion_wxyz": [
+            -0.129103,
+            -0.181632,
+            0.824922,
+            -0.519467
+          ]
+        }
+      },
+      {
+        "timestamp": "72863804786785",
+        "segment_id": 0,
+        "subtask": "Pick up and position kettle",
+        "objects": [
+          "kettle"
+        ],
+        "interaction_text": "Hand is grasping the handle of the kettle.",
+        "action": "Pick up kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.136922,
+            -0.042434,
+            0.228007
+          ],
+          "quaternion_wxyz": [
+            -0.028002,
+            -0.03778,
+            0.772195,
+            -0.633643
+          ]
+        }
+      },
+      {
+        "timestamp": "72875807554333",
+        "segment_id": 0,
+        "subtask": "Pick up and position kettle",
+        "objects": [
+          "coffee dripper",
+          "kettle",
+          "scale"
+        ],
+        "interaction_text": "",
+        "action": "Position kettle to pour",
+        "camera_pose": {
+          "position_xyz": [
+            -0.084954,
+            -0.102707,
+            0.219571
+          ],
+          "quaternion_wxyz": [
+            -0.099328,
+            -0.251474,
+            0.803759,
+            -0.529969
+          ]
+        }
+      },
+      {
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "subtask": "Move kettle",
+        "objects": [
+          "coffee filter",
+          "dripper",
+          "kettle",
+          "scale",
+          "table"
+        ],
+        "interaction_text": "hand moving the kettle across the table surface",
+        "action": "Move kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ],
+          "quaternion_wxyz": [
+            -0.170021,
+            -0.16713,
+            0.844964,
+            -0.478744
+          ]
+        }
+      },
+      {
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "subtask": "Move kettle",
+        "objects": [
+          "coffee filter",
+          "dripper",
+          "kettle",
+          "scale",
+          "table"
+        ],
+        "interaction_text": "hand placing the kettle down on the table",
+        "action": "Move kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ],
+          "quaternion_wxyz": [
+            -0.068046,
+            -0.046161,
+            0.895866,
+            -0.436649
+          ]
+        }
+      }
+    ],
+    "relations": [
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:0",
+        "timestamp": "72857807732824",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:3",
+        "timestamp": "72863804786785",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72863804786785",
+        "segment_id": 0,
+        "text": "Hand is grasping the handle of the kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:9",
+        "timestamp": "72875807554333",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:20",
+        "timestamp": "72897804785676",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "text": "hand moving the kettle across the table surface",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:24",
+        "timestamp": "72905804784472",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "text": "hand placing the kettle down on the table",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      }
+    ]
+  },
+  {
+    "query": "interactions",
+    "count": 19,
+    "by_object": {
+      "coffee_container": 1,
+      "coffee_dripper": 1,
+      "coffee_jar": 2,
+      "dripper": 2,
+      "glass_carafe": 1,
+      "gooseneck_kettle": 5,
+      "kettle": 3,
+      "lid": 1,
+      "table": 2,
+      "wooden_scoop": 1
+    },
+    "relations": [
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72863804786785",
+        "segment_id": 0,
+        "text": "Hand is grasping the handle of the kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "coffee_dripper",
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "text": "hand moving the kettle across the table surface",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "table",
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "text": "hand moving the kettle across the table surface",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "text": "hand placing the kettle down on the table",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "table",
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "text": "hand placing the kettle down on the table",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "glass_carafe",
+        "timestamp": "72907804785931",
+        "segment_id": 3,
+        "text": "User's hands are holding the glass carafe.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "wooden_scoop",
+        "timestamp": "72925804784565",
+        "segment_id": 3,
+        "text": "User picks up the wooden scoop with their right hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "coffee_jar",
+        "timestamp": "72927804785149",
+        "segment_id": 4,
+        "text": "hand holding coffee jar and wooden scoop",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "coffee_jar",
+        "timestamp": "72931804785276",
+        "segment_id": 4,
+        "text": "scoop inside the coffee jar to collect grounds",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "dripper",
+        "timestamp": "72937804785487",
+        "segment_id": 4,
+        "text": "scoop moving away from the jar toward the coffee dripper",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "dripper",
+        "timestamp": "72945804784533",
+        "segment_id": 4,
+        "text": "scoop positioned over the coffee dripper",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "coffee_container",
+        "timestamp": "72947804785867",
+        "segment_id": 5,
+        "text": "User holds the lid of the coffee container in the right hand while the left hand holds the container.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "lid",
+        "timestamp": "72947804785867",
+        "segment_id": 5,
+        "text": "User holds the lid of the coffee container in the right hand while the left hand holds the container.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "72977804786464",
+        "segment_id": 7,
+        "text": "hands positioned near the gooseneck kettle, holding it in readiness",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "72995804785348",
+        "segment_id": 7,
+        "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "73005806914853",
+        "segment_id": 8,
+        "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "73007804786395",
+        "segment_id": 9,
+        "text": "right hand grasping the handle of the gooseneck kettle",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      }
+    ]
+  },
+  {
+    "query": "state:last",
+    "timestamp": "73015804783899",
+    "subtask": "Handle gooseneck kettle",
+    "action": "",
+    "visible_objects": [],
+    "active_relations": []
+  },
+  {
+    "query": "object:kettle",
+    "object": {
+      "name": "kettle",
+      "aliases": [
+        "kettle"
+      ],
+      "first_seen": "72857807732824",
+      "last_seen": "72905804784472",
+      "observations": 5,
+      "provenance": "caption.objects"
+    },
+    "timeline": [
+      {
+        "timestamp": "72857807732824",
+        "segment_id": 0,
+        "subtask": "Pick up and position kettle",
+        "objects": [
+          "bottle",
+          "coffee dripper",
+          "kettle",
+          "scale"
+        ],
+        "interaction_text": "",
+        "action": "Pick up kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.124226,
+            -0.071547,
+            0.167756
+          ],
+          "quaternion_wxyz": [
+            -0.129103,
+            -0.181632,
+            0.824922,
+            -0.519467
+          ]
+        }
+      },
+      {
+        "timestamp": "72863804786785",
+        "segment_id": 0,
+        "subtask": "Pick up and position kettle",
+        "objects": [
+          "kettle"
+        ],
+        "interaction_text": "Hand is grasping the handle of the kettle.",
+        "action": "Pick up kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.136922,
+            -0.042434,
+            0.228007
+          ],
+          "quaternion_wxyz": [
+            -0.028002,
+            -0.03778,
+            0.772195,
+            -0.633643
+          ]
+        }
+      },
+      {
+        "timestamp": "72875807554333",
+        "segment_id": 0,
+        "subtask": "Pick up and position kettle",
+        "objects": [
+          "coffee dripper",
+          "kettle",
+          "scale"
+        ],
+        "interaction_text": "",
+        "action": "Position kettle to pour",
+        "camera_pose": {
+          "position_xyz": [
+            -0.084954,
+            -0.102707,
+            0.219571
+          ],
+          "quaternion_wxyz": [
+            -0.099328,
+            -0.251474,
+            0.803759,
+            -0.529969
+          ]
+        }
+      },
+      {
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "subtask": "Move kettle",
+        "objects": [
+          "coffee filter",
+          "dripper",
+          "kettle",
+          "scale",
+          "table"
+        ],
+        "interaction_text": "hand moving the kettle across the table surface",
+        "action": "Move kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ],
+          "quaternion_wxyz": [
+            -0.170021,
+            -0.16713,
+            0.844964,
+            -0.478744
+          ]
+        }
+      },
+      {
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "subtask": "Move kettle",
+        "objects": [
+          "coffee filter",
+          "dripper",
+          "kettle",
+          "scale",
+          "table"
+        ],
+        "interaction_text": "hand placing the kettle down on the table",
+        "action": "Move kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ],
+          "quaternion_wxyz": [
+            -0.068046,
+            -0.046161,
+            0.895866,
+            -0.436649
+          ]
+        }
+      }
+    ],
+    "relations": [
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:0",
+        "timestamp": "72857807732824",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:3",
+        "timestamp": "72863804786785",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72863804786785",
+        "segment_id": 0,
+        "text": "Hand is grasping the handle of the kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:9",
+        "timestamp": "72875807554333",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:20",
+        "timestamp": "72897804785676",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "text": "hand moving the kettle across the table surface",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:24",
+        "timestamp": "72905804784472",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "text": "hand placing the kettle down on the table",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      }
+    ]
+  },
+  {
+    "query": "interactions",
+    "count": 19,
+    "by_object": {
+      "coffee_container": 1,
+      "coffee_dripper": 1,
+      "coffee_jar": 2,
+      "dripper": 2,
+      "glass_carafe": 1,
+      "gooseneck_kettle": 5,
+      "kettle": 3,
+      "lid": 1,
+      "table": 2,
+      "wooden_scoop": 1
+    },
+    "relations": [
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72863804786785",
+        "segment_id": 0,
+        "text": "Hand is grasping the handle of the kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "coffee_dripper",
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "text": "hand moving the kettle across the table surface",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "table",
+        "timestamp": "72897804785676",
+        "segment_id": 2,
+        "text": "hand moving the kettle across the table surface",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "text": "hand placing the kettle down on the table",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "table",
+        "timestamp": "72905804784472",
+        "segment_id": 2,
+        "text": "hand placing the kettle down on the table",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "glass_carafe",
+        "timestamp": "72907804785931",
+        "segment_id": 3,
+        "text": "User's hands are holding the glass carafe.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "wooden_scoop",
+        "timestamp": "72925804784565",
+        "segment_id": 3,
+        "text": "User picks up the wooden scoop with their right hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "coffee_jar",
+        "timestamp": "72927804785149",
+        "segment_id": 4,
+        "text": "hand holding coffee jar and wooden scoop",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "coffee_jar",
+        "timestamp": "72931804785276",
+        "segment_id": 4,
+        "text": "scoop inside the coffee jar to collect grounds",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_moves_toward",
+        "subject": "hand",
+        "object": "dripper",
+        "timestamp": "72937804785487",
+        "segment_id": 4,
+        "text": "scoop moving away from the jar toward the coffee dripper",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "dripper",
+        "timestamp": "72945804784533",
+        "segment_id": 4,
+        "text": "scoop positioned over the coffee dripper",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "coffee_container",
+        "timestamp": "72947804785867",
+        "segment_id": 5,
+        "text": "User holds the lid of the coffee container in the right hand while the left hand holds the container.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "lid",
+        "timestamp": "72947804785867",
+        "segment_id": 5,
+        "text": "User holds the lid of the coffee container in the right hand while the left hand holds the container.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "72977804786464",
+        "segment_id": 7,
+        "text": "hands positioned near the gooseneck kettle, holding it in readiness",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "72995804785348",
+        "segment_id": 7,
+        "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "73005806914853",
+        "segment_id": 8,
+        "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "gooseneck_kettle",
+        "timestamp": "73007804786395",
+        "segment_id": 9,
+        "text": "right hand grasping the handle of the gooseneck kettle",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      }
+    ]
+  },
+  {
+    "query": "state:last",
+    "timestamp": "73015804783899",
+    "subtask": "Handle gooseneck kettle",
+    "action": "",
+    "visible_objects": [],
+    "active_relations": []
+  }
+]

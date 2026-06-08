@@ -1,0 +1,7 @@
+data_root: /Users/chaoyue/Library/CloudStorage/Dropbox/Ropedia/data/sample/xperience-10m-sample
+output_dir: outputs/sample_graph
+max_frames: 80
+queries:
+  - object:kettle
+  - interactions
+  - state:last

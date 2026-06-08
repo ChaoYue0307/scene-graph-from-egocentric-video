@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+outputs/*
+!outputs/.gitkeep
+!outputs/sample_graph/
+!outputs/sample_graph/scene_graph.json
+!outputs/sample_graph/query_results.json
+!outputs/sample_graph/schema.json
+data/
+*.hdf5
+*.mp4
+*.rrd
