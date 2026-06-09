@@ -3,39 +3,27 @@
     "main_task": "Making pour-over coffee",
     "source_data_root": "../data/sample/xperience-10m-sample",
     "num_frames": 80,
-    "num_objects": 22,
-    "num_relations": 150,
+    "num_objects": 18,
+    "num_relations": 155,
     "top_objects": [
       [
-        "coffee_dripper",
-        13
+        "dripper",
+        20
       ],
       [
         "scale",
-        10
-      ],
-      [
-        "gooseneck_kettle",
-        10
-      ],
-      [
-        "dripper",
-        7
-      ],
-      [
-        "digital_scale",
-        6
+        16
       ],
       [
         "kettle",
-        5
+        15
+      ],
+      [
+        "bottle",
+        7
       ],
       [
         "coffee_scoop",
-        5
-      ],
-      [
-        "water_bottle",
         5
       ],
       [
@@ -43,8 +31,20 @@
         3
       ],
       [
-        "glass_carafe",
+        "carafe",
         3
+      ],
+      [
+        "coffee_filter",
+        2
+      ],
+      [
+        "white_mug",
+        2
+      ],
+      [
+        "wooden_scoop",
+        2
       ]
     ]
   },
@@ -1844,61 +1844,45 @@
     "bottle": {
       "name": "bottle",
       "aliases": [
-        "bottle"
+        "bottle",
+        "water bottle"
       ],
       "first_seen": "72857807732824",
-      "last_seen": "72907804785931",
-      "observations": 2,
+      "last_seen": "72997806959599",
+      "observations": 7,
       "provenance": "caption.objects"
     },
-    "coffee_dripper": {
+    "dripper": {
       "name": "coffee dripper",
       "aliases": [
-        "coffee dripper"
+        "coffee dripper",
+        "dripper"
       ],
       "first_seen": "72857807732824",
       "last_seen": "73007804786395",
-      "observations": 13,
+      "observations": 20,
       "provenance": "caption.objects"
     },
     "kettle": {
       "name": "kettle",
       "aliases": [
+        "gooseneck kettle",
         "kettle"
       ],
       "first_seen": "72857807732824",
-      "last_seen": "72905804784472",
-      "observations": 5,
+      "last_seen": "73007804786395",
+      "observations": 15,
       "provenance": "caption.objects"
     },
     "scale": {
       "name": "scale",
       "aliases": [
+        "digital scale",
         "scale"
       ],
       "first_seen": "72857807732824",
-      "last_seen": "73005806914853",
-      "observations": 10,
-      "provenance": "caption.objects"
-    },
-    "digital_scale": {
-      "name": "digital scale",
-      "aliases": [
-        "digital scale"
-      ],
-      "first_seen": "72877805630083",
       "last_seen": "73007804786395",
-      "observations": 6,
-      "provenance": "caption.objects"
-    },
-    "gooseneck_kettle": {
-      "name": "gooseneck kettle",
-      "aliases": [
-        "gooseneck kettle"
-      ],
-      "first_seen": "72877805630083",
-      "last_seen": "73007804786395",
-      "observations": 10,
+      "observations": 16,
       "provenance": "caption.objects"
     },
     "table": {
@@ -1921,16 +1905,6 @@
       "observations": 2,
       "provenance": "caption.objects"
     },
-    "dripper": {
-      "name": "dripper",
-      "aliases": [
-        "dripper"
-      ],
-      "first_seen": "72897804785676",
-      "last_seen": "72955804786829",
-      "observations": 7,
-      "provenance": "caption.objects"
-    },
     "coffee_scale": {
       "name": "coffee scale",
       "aliases": [
@@ -1941,7 +1915,7 @@
       "observations": 1,
       "provenance": "caption.objects"
     },
-    "glass_carafe": {
+    "carafe": {
       "name": "glass carafe",
       "aliases": [
         "glass carafe"
@@ -2031,16 +2005,6 @@
       "observations": 2,
       "provenance": "caption.objects"
     },
-    "water_bottle": {
-      "name": "water bottle",
-      "aliases": [
-        "water bottle"
-      ],
-      "first_seen": "72957804786497",
-      "last_seen": "72997806959599",
-      "observations": 5,
-      "provenance": "caption.objects"
-    },
     "mug": {
       "name": "mug",
       "aliases": [
@@ -2073,7 +2037,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:0",
       "timestamp": "72857807732824",
       "confidence": 0.85,
@@ -2196,7 +2160,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:9",
       "timestamp": "72875807554333",
       "confidence": 0.85,
@@ -2229,7 +2193,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:10",
       "timestamp": "72877805630083",
       "confidence": 0.85,
@@ -2237,7 +2201,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "digital_scale",
+      "subject": "scale",
       "object": "frame:10",
       "timestamp": "72877805630083",
       "confidence": 0.85,
@@ -2245,7 +2209,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:10",
       "timestamp": "72877805630083",
       "confidence": 0.85,
@@ -2260,8 +2224,18 @@
       "provenance": "caption.objects"
     },
     {
+      "type": "hand_grasps",
+      "subject": "hand",
+      "object": "kettle",
+      "timestamp": "72877805630083",
+      "segment_id": 1,
+      "text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+      "confidence": 0.65,
+      "provenance": "caption.interaction_text+object_match"
+    },
+    {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:13",
       "timestamp": "72883804786336",
       "confidence": 0.85,
@@ -2269,7 +2243,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "digital_scale",
+      "subject": "scale",
       "object": "frame:13",
       "timestamp": "72883804786336",
       "confidence": 0.85,
@@ -2277,7 +2251,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:13",
       "timestamp": "72883804786336",
       "confidence": 0.85,
@@ -2286,7 +2260,17 @@
     {
       "type": "hand_contacts",
       "subject": "hand",
-      "object": "coffee_dripper",
+      "object": "dripper",
+      "timestamp": "72883804786336",
+      "segment_id": 1,
+      "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+      "confidence": 0.65,
+      "provenance": "caption.interaction_text+object_match"
+    },
+    {
+      "type": "hand_contacts",
+      "subject": "hand",
+      "object": "kettle",
       "timestamp": "72883804786336",
       "segment_id": 1,
       "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
@@ -2295,7 +2279,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:19",
       "timestamp": "72895806166842",
       "confidence": 0.85,
@@ -2303,7 +2287,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "digital_scale",
+      "subject": "scale",
       "object": "frame:19",
       "timestamp": "72895806166842",
       "confidence": 0.85,
@@ -2311,11 +2295,21 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:19",
       "timestamp": "72895806166842",
       "confidence": 0.85,
       "provenance": "caption.objects"
+    },
+    {
+      "type": "hand_grasps",
+      "subject": "hand",
+      "object": "kettle",
+      "timestamp": "72895806166842",
+      "segment_id": 1,
+      "text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
+      "confidence": 0.65,
+      "provenance": "caption.interaction_text+object_match"
     },
     {
       "type": "visible_in",
@@ -2492,7 +2486,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:25",
       "timestamp": "72907804785931",
       "confidence": 0.85,
@@ -2508,7 +2502,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "glass_carafe",
+      "subject": "carafe",
       "object": "frame:25",
       "timestamp": "72907804785931",
       "confidence": 0.85,
@@ -2525,7 +2519,7 @@
     {
       "type": "hand_grasps",
       "subject": "hand",
-      "object": "glass_carafe",
+      "object": "carafe",
       "timestamp": "72907804785931",
       "segment_id": 3,
       "text": "User's hands are holding the glass carafe.",
@@ -2588,7 +2582,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "glass_carafe",
+      "subject": "carafe",
       "object": "frame:31",
       "timestamp": "72919804784853",
       "confidence": 0.85,
@@ -2631,7 +2625,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "glass_carafe",
+      "subject": "carafe",
       "object": "frame:34",
       "timestamp": "72925804784565",
       "confidence": 0.85,
@@ -2907,7 +2901,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:50",
       "timestamp": "72957804786497",
       "confidence": 0.85,
@@ -2923,7 +2917,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "digital_scale",
+      "subject": "scale",
       "object": "frame:50",
       "timestamp": "72957804786497",
       "confidence": 0.85,
@@ -2931,7 +2925,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:50",
       "timestamp": "72957804786497",
       "confidence": 0.85,
@@ -2939,7 +2933,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "water_bottle",
+      "subject": "bottle",
       "object": "frame:50",
       "timestamp": "72957804786497",
       "confidence": 0.85,
@@ -2948,7 +2942,17 @@
     {
       "type": "hand_interacts_with",
       "subject": "hand",
-      "object": "gooseneck_kettle",
+      "object": "scale",
+      "timestamp": "72957804786497",
+      "segment_id": 6,
+      "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+      "confidence": 0.65,
+      "provenance": "caption.interaction_text+object_match"
+    },
+    {
+      "type": "hand_interacts_with",
+      "subject": "hand",
+      "object": "kettle",
       "timestamp": "72957804786497",
       "segment_id": 6,
       "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
@@ -3038,7 +3042,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:59",
       "timestamp": "72975806764297",
       "confidence": 0.85,
@@ -3054,7 +3058,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "digital_scale",
+      "subject": "scale",
       "object": "frame:59",
       "timestamp": "72975806764297",
       "confidence": 0.85,
@@ -3062,7 +3066,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:59",
       "timestamp": "72975806764297",
       "confidence": 0.85,
@@ -3070,11 +3074,21 @@
     },
     {
       "type": "visible_in",
-      "subject": "water_bottle",
+      "subject": "bottle",
       "object": "frame:59",
       "timestamp": "72975806764297",
       "confidence": 0.85,
       "provenance": "caption.objects"
+    },
+    {
+      "type": "hand_grasps",
+      "subject": "hand",
+      "object": "kettle",
+      "timestamp": "72975806764297",
+      "segment_id": 6,
+      "text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+      "confidence": 0.65,
+      "provenance": "caption.interaction_text+object_match"
     },
     {
       "type": "action_active",
@@ -3087,7 +3101,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:60",
       "timestamp": "72977804786464",
       "confidence": 0.85,
@@ -3095,7 +3109,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:60",
       "timestamp": "72977804786464",
       "confidence": 0.85,
@@ -3119,7 +3133,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "water_bottle",
+      "subject": "bottle",
       "object": "frame:60",
       "timestamp": "72977804786464",
       "confidence": 0.85,
@@ -3128,7 +3142,7 @@
     {
       "type": "hand_grasps",
       "subject": "hand",
-      "object": "gooseneck_kettle",
+      "object": "kettle",
       "timestamp": "72977804786464",
       "segment_id": 7,
       "text": "hands positioned near the gooseneck kettle, holding it in readiness",
@@ -3137,7 +3151,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:69",
       "timestamp": "72995804785348",
       "confidence": 0.85,
@@ -3145,7 +3159,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:69",
       "timestamp": "72995804785348",
       "confidence": 0.85,
@@ -3169,7 +3183,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "water_bottle",
+      "subject": "bottle",
       "object": "frame:69",
       "timestamp": "72995804785348",
       "confidence": 0.85,
@@ -3178,7 +3192,7 @@
     {
       "type": "hand_grasps",
       "subject": "hand",
-      "object": "gooseneck_kettle",
+      "object": "kettle",
       "timestamp": "72995804785348",
       "segment_id": 7,
       "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
@@ -3187,7 +3201,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:70",
       "timestamp": "72997806959599",
       "confidence": 0.85,
@@ -3195,7 +3209,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:70",
       "timestamp": "72997806959599",
       "confidence": 0.85,
@@ -3211,7 +3225,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "water_bottle",
+      "subject": "bottle",
       "object": "frame:70",
       "timestamp": "72997806959599",
       "confidence": 0.85,
@@ -3263,7 +3277,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:74",
       "timestamp": "73005806914853",
       "confidence": 0.85,
@@ -3271,7 +3285,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:74",
       "timestamp": "73005806914853",
       "confidence": 0.85,
@@ -3288,7 +3302,7 @@
     {
       "type": "hand_grasps",
       "subject": "hand",
-      "object": "gooseneck_kettle",
+      "object": "kettle",
       "timestamp": "73005806914853",
       "segment_id": 8,
       "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
@@ -3306,7 +3320,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "coffee_dripper",
+      "subject": "dripper",
       "object": "frame:75",
       "timestamp": "73007804786395",
       "confidence": 0.85,
@@ -3314,7 +3328,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "digital_scale",
+      "subject": "scale",
       "object": "frame:75",
       "timestamp": "73007804786395",
       "confidence": 0.85,
@@ -3322,7 +3336,7 @@
     },
     {
       "type": "visible_in",
-      "subject": "gooseneck_kettle",
+      "subject": "kettle",
       "object": "frame:75",
       "timestamp": "73007804786395",
       "confidence": 0.85,
@@ -3339,7 +3353,7 @@
     {
       "type": "hand_grasps",
       "subject": "hand",
-      "object": "gooseneck_kettle",
+      "object": "kettle",
       "timestamp": "73007804786395",
       "segment_id": 9,
       "text": "right hand grasping the handle of the gooseneck kettle",

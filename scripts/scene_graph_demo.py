@@ -24,6 +24,16 @@ SCHEMA = {
     },
 }
 
+OBJECT_ALIASES = {
+    "gooseneck_kettle": "kettle",
+    "glass_kettle": "kettle",
+    "coffee_dripper": "dripper",
+    "ceramic_dripper": "dripper",
+    "digital_scale": "scale",
+    "water_bottle": "bottle",
+    "glass_carafe": "carafe",
+}
+
 
 def load_caption(annotation: Path) -> dict:
     with h5py.File(annotation, "r") as h5:
@@ -50,7 +60,7 @@ def load_slam_pose_preview(annotation: Path) -> dict[str, dict]:
 
 def norm_object(name: str) -> str:
     clean = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-    return clean or "unknown_object"
+    return OBJECT_ALIASES.get(clean, clean or "unknown_object")
 
 
 def relation_type(text: str) -> str:

@@ -1,5 +1,7 @@
 # Scene Graph From Egocentric Video
 
+[![CI](https://github.com/ChaoYue0307/scene-graph-from-egocentric-video/actions/workflows/ci.yml/badge.svg)](https://github.com/ChaoYue0307/scene-graph-from-egocentric-video/actions/workflows/ci.yml)
+
 Learn how to convert first-person video annotations into a structured world
 memory that can answer questions about objects, hand-object interactions, and
 task state.

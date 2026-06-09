@@ -4,11 +4,12 @@
     "object": {
       "name": "kettle",
       "aliases": [
+        "gooseneck kettle",
         "kettle"
       ],
       "first_seen": "72857807732824",
-      "last_seen": "72905804784472",
-      "observations": 5,
+      "last_seen": "73007804786395",
+      "observations": 15,
       "provenance": "caption.objects"
     },
     "timeline": [
@@ -87,6 +88,82 @@
         }
       },
       {
+        "timestamp": "72877805630083",
+        "segment_id": 1,
+        "subtask": "Position kettle to pour",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle",
+          "table"
+        ],
+        "interaction_text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.359029,
+            -0.012748,
+            -0.045208
+          ],
+          "quaternion_wxyz": [
+            0.189131,
+            0.182809,
+            0.736769,
+            -0.622882
+          ]
+        }
+      },
+      {
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "subtask": "Position kettle to pour",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle"
+        ],
+        "interaction_text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.127773,
+            -0.10324,
+            0.246546
+          ],
+          "quaternion_wxyz": [
+            -0.122458,
+            -0.245599,
+            0.801171,
+            -0.5318
+          ]
+        }
+      },
+      {
+        "timestamp": "72895806166842",
+        "segment_id": 1,
+        "subtask": "Position kettle to pour",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle"
+        ],
+        "interaction_text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.113114,
+            -0.042768,
+            0.06208
+          ],
+          "quaternion_wxyz": [
+            -0.123703,
+            -0.194898,
+            0.83359,
+            -0.501837
+          ]
+        }
+      },
+      {
         "timestamp": "72897804785676",
         "segment_id": 2,
         "subtask": "Move kettle",
@@ -139,6 +216,192 @@
             -0.436649
           ]
         }
+      },
+      {
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "coffee mug",
+          "digital scale",
+          "gooseneck kettle",
+          "water bottle"
+        ],
+        "interaction_text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "action": "Hold gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ],
+          "quaternion_wxyz": [
+            -0.157987,
+            -0.19144,
+            0.850383,
+            -0.463939
+          ]
+        }
+      },
+      {
+        "timestamp": "72975806764297",
+        "segment_id": 6,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "coffee mug",
+          "digital scale",
+          "gooseneck kettle",
+          "water bottle"
+        ],
+        "interaction_text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+        "action": "Hold gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ],
+          "quaternion_wxyz": [
+            -0.140449,
+            -0.154098,
+            0.741975,
+            -0.637182
+          ]
+        }
+      },
+      {
+        "timestamp": "72977804786464",
+        "segment_id": 7,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "mug",
+          "scale",
+          "water bottle"
+        ],
+        "interaction_text": "hands positioned near the gooseneck kettle, holding it in readiness",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ],
+          "quaternion_wxyz": [
+            -0.113017,
+            -0.158782,
+            0.80511,
+            -0.560191
+          ]
+        }
+      },
+      {
+        "timestamp": "72995804785348",
+        "segment_id": 7,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "mug",
+          "scale",
+          "water bottle"
+        ],
+        "interaction_text": "hands continue to hold the gooseneck kettle steady over the table workspace",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ],
+          "quaternion_wxyz": [
+            -0.119954,
+            -0.15507,
+            0.775945,
+            -0.599561
+          ]
+        }
+      },
+      {
+        "timestamp": "72997806959599",
+        "segment_id": 8,
+        "subtask": "Lift gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "scale",
+          "water bottle",
+          "white cup"
+        ],
+        "interaction_text": "",
+        "action": "Grasp gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ],
+          "quaternion_wxyz": [
+            -0.118177,
+            -0.150312,
+            0.774396,
+            -0.603118
+          ]
+        }
+      },
+      {
+        "timestamp": "73005806914853",
+        "segment_id": 8,
+        "subtask": "Lift gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "scale"
+        ],
+        "interaction_text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
+        "action": "Lift gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.117765,
+            -0.043999,
+            0.099215
+          ],
+          "quaternion_wxyz": [
+            -0.154318,
+            -0.221136,
+            0.816415,
+            -0.510638
+          ]
+        }
+      },
+      {
+        "timestamp": "73007804786395",
+        "segment_id": 9,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle",
+          "white mug"
+        ],
+        "interaction_text": "right hand grasping the handle of the gooseneck kettle",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.102904,
+            -0.046399,
+            0.088219
+          ],
+          "quaternion_wxyz": [
+            -0.135446,
+            -0.211748,
+            0.825188,
+            -0.505849
+          ]
+        }
       }
     ],
     "relations": [
@@ -179,6 +442,60 @@
       {
         "type": "visible_in",
         "subject": "kettle",
+        "object": "frame:10",
+        "timestamp": "72877805630083",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72877805630083",
+        "segment_id": 1,
+        "text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:13",
+        "timestamp": "72883804786336",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:19",
+        "timestamp": "72895806166842",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72895806166842",
+        "segment_id": 1,
+        "text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
         "object": "frame:20",
         "timestamp": "72897804785676",
         "confidence": 0.85,
@@ -211,21 +528,136 @@
         "text": "hand placing the kettle down on the table",
         "confidence": 0.65,
         "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:50",
+        "timestamp": "72957804786497",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:59",
+        "timestamp": "72975806764297",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72975806764297",
+        "segment_id": 6,
+        "text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:60",
+        "timestamp": "72977804786464",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72977804786464",
+        "segment_id": 7,
+        "text": "hands positioned near the gooseneck kettle, holding it in readiness",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:69",
+        "timestamp": "72995804785348",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72995804785348",
+        "segment_id": 7,
+        "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:70",
+        "timestamp": "72997806959599",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:74",
+        "timestamp": "73005806914853",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "73005806914853",
+        "segment_id": 8,
+        "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:75",
+        "timestamp": "73007804786395",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "73007804786395",
+        "segment_id": 9,
+        "text": "right hand grasping the handle of the gooseneck kettle",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
       }
     ]
   },
   {
     "query": "interactions",
-    "count": 19,
+    "count": 24,
     "by_object": {
+      "carafe": 1,
       "coffee_container": 1,
-      "coffee_dripper": 1,
       "coffee_jar": 2,
-      "dripper": 2,
-      "glass_carafe": 1,
-      "gooseneck_kettle": 5,
-      "kettle": 3,
+      "dripper": 3,
+      "kettle": 12,
       "lid": 1,
+      "scale": 1,
       "table": 2,
       "wooden_scoop": 1
     },
@@ -241,12 +673,42 @@
         "provenance": "caption.interaction_text+object_match"
       },
       {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72877805630083",
+        "segment_id": 1,
+        "text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
         "type": "hand_contacts",
         "subject": "hand",
-        "object": "coffee_dripper",
+        "object": "dripper",
         "timestamp": "72883804786336",
         "segment_id": 1,
         "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72895806166842",
+        "segment_id": 1,
+        "text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
         "confidence": 0.65,
         "provenance": "caption.interaction_text+object_match"
       },
@@ -293,7 +755,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "glass_carafe",
+        "object": "carafe",
         "timestamp": "72907804785931",
         "segment_id": 3,
         "text": "User's hands are holding the glass carafe.",
@@ -373,7 +835,17 @@
       {
         "type": "hand_interacts_with",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "scale",
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
         "timestamp": "72957804786497",
         "segment_id": 6,
         "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
@@ -383,7 +855,17 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
+        "timestamp": "72975806764297",
+        "segment_id": 6,
+        "text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
         "timestamp": "72977804786464",
         "segment_id": 7,
         "text": "hands positioned near the gooseneck kettle, holding it in readiness",
@@ -393,7 +875,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
         "timestamp": "72995804785348",
         "segment_id": 7,
         "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
@@ -403,7 +885,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
         "timestamp": "73005806914853",
         "segment_id": 8,
         "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
@@ -413,7 +895,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
         "timestamp": "73007804786395",
         "segment_id": 9,
         "text": "right hand grasping the handle of the gooseneck kettle",
@@ -435,11 +917,12 @@
     "object": {
       "name": "kettle",
       "aliases": [
+        "gooseneck kettle",
         "kettle"
       ],
       "first_seen": "72857807732824",
-      "last_seen": "72905804784472",
-      "observations": 5,
+      "last_seen": "73007804786395",
+      "observations": 15,
       "provenance": "caption.objects"
     },
     "timeline": [
@@ -518,6 +1001,82 @@
         }
       },
       {
+        "timestamp": "72877805630083",
+        "segment_id": 1,
+        "subtask": "Position kettle to pour",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle",
+          "table"
+        ],
+        "interaction_text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.359029,
+            -0.012748,
+            -0.045208
+          ],
+          "quaternion_wxyz": [
+            0.189131,
+            0.182809,
+            0.736769,
+            -0.622882
+          ]
+        }
+      },
+      {
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "subtask": "Position kettle to pour",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle"
+        ],
+        "interaction_text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.127773,
+            -0.10324,
+            0.246546
+          ],
+          "quaternion_wxyz": [
+            -0.122458,
+            -0.245599,
+            0.801171,
+            -0.5318
+          ]
+        }
+      },
+      {
+        "timestamp": "72895806166842",
+        "segment_id": 1,
+        "subtask": "Position kettle to pour",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle"
+        ],
+        "interaction_text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.113114,
+            -0.042768,
+            0.06208
+          ],
+          "quaternion_wxyz": [
+            -0.123703,
+            -0.194898,
+            0.83359,
+            -0.501837
+          ]
+        }
+      },
+      {
         "timestamp": "72897804785676",
         "segment_id": 2,
         "subtask": "Move kettle",
@@ -570,6 +1129,192 @@
             -0.436649
           ]
         }
+      },
+      {
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "coffee mug",
+          "digital scale",
+          "gooseneck kettle",
+          "water bottle"
+        ],
+        "interaction_text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "action": "Hold gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ],
+          "quaternion_wxyz": [
+            -0.157987,
+            -0.19144,
+            0.850383,
+            -0.463939
+          ]
+        }
+      },
+      {
+        "timestamp": "72975806764297",
+        "segment_id": 6,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "coffee mug",
+          "digital scale",
+          "gooseneck kettle",
+          "water bottle"
+        ],
+        "interaction_text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+        "action": "Hold gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ],
+          "quaternion_wxyz": [
+            -0.140449,
+            -0.154098,
+            0.741975,
+            -0.637182
+          ]
+        }
+      },
+      {
+        "timestamp": "72977804786464",
+        "segment_id": 7,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "mug",
+          "scale",
+          "water bottle"
+        ],
+        "interaction_text": "hands positioned near the gooseneck kettle, holding it in readiness",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ],
+          "quaternion_wxyz": [
+            -0.113017,
+            -0.158782,
+            0.80511,
+            -0.560191
+          ]
+        }
+      },
+      {
+        "timestamp": "72995804785348",
+        "segment_id": 7,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "mug",
+          "scale",
+          "water bottle"
+        ],
+        "interaction_text": "hands continue to hold the gooseneck kettle steady over the table workspace",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ],
+          "quaternion_wxyz": [
+            -0.119954,
+            -0.15507,
+            0.775945,
+            -0.599561
+          ]
+        }
+      },
+      {
+        "timestamp": "72997806959599",
+        "segment_id": 8,
+        "subtask": "Lift gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "scale",
+          "water bottle",
+          "white cup"
+        ],
+        "interaction_text": "",
+        "action": "Grasp gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ],
+          "quaternion_wxyz": [
+            -0.118177,
+            -0.150312,
+            0.774396,
+            -0.603118
+          ]
+        }
+      },
+      {
+        "timestamp": "73005806914853",
+        "segment_id": 8,
+        "subtask": "Lift gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "gooseneck kettle",
+          "scale"
+        ],
+        "interaction_text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
+        "action": "Lift gooseneck kettle",
+        "camera_pose": {
+          "position_xyz": [
+            -0.117765,
+            -0.043999,
+            0.099215
+          ],
+          "quaternion_wxyz": [
+            -0.154318,
+            -0.221136,
+            0.816415,
+            -0.510638
+          ]
+        }
+      },
+      {
+        "timestamp": "73007804786395",
+        "segment_id": 9,
+        "subtask": "Handle gooseneck kettle",
+        "objects": [
+          "coffee dripper",
+          "digital scale",
+          "gooseneck kettle",
+          "white mug"
+        ],
+        "interaction_text": "right hand grasping the handle of the gooseneck kettle",
+        "action": "",
+        "camera_pose": {
+          "position_xyz": [
+            -0.102904,
+            -0.046399,
+            0.088219
+          ],
+          "quaternion_wxyz": [
+            -0.135446,
+            -0.211748,
+            0.825188,
+            -0.505849
+          ]
+        }
       }
     ],
     "relations": [
@@ -610,6 +1355,60 @@
       {
         "type": "visible_in",
         "subject": "kettle",
+        "object": "frame:10",
+        "timestamp": "72877805630083",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72877805630083",
+        "segment_id": 1,
+        "text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:13",
+        "timestamp": "72883804786336",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:19",
+        "timestamp": "72895806166842",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72895806166842",
+        "segment_id": 1,
+        "text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
         "object": "frame:20",
         "timestamp": "72897804785676",
         "confidence": 0.85,
@@ -642,21 +1441,136 @@
         "text": "hand placing the kettle down on the table",
         "confidence": 0.65,
         "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:50",
+        "timestamp": "72957804786497",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:59",
+        "timestamp": "72975806764297",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72975806764297",
+        "segment_id": 6,
+        "text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:60",
+        "timestamp": "72977804786464",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72977804786464",
+        "segment_id": 7,
+        "text": "hands positioned near the gooseneck kettle, holding it in readiness",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:69",
+        "timestamp": "72995804785348",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72995804785348",
+        "segment_id": 7,
+        "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:70",
+        "timestamp": "72997806959599",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:74",
+        "timestamp": "73005806914853",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "73005806914853",
+        "segment_id": 8,
+        "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "visible_in",
+        "subject": "kettle",
+        "object": "frame:75",
+        "timestamp": "73007804786395",
+        "confidence": 0.85,
+        "provenance": "caption.objects"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "73007804786395",
+        "segment_id": 9,
+        "text": "right hand grasping the handle of the gooseneck kettle",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
       }
     ]
   },
   {
     "query": "interactions",
-    "count": 19,
+    "count": 24,
     "by_object": {
+      "carafe": 1,
       "coffee_container": 1,
-      "coffee_dripper": 1,
       "coffee_jar": 2,
-      "dripper": 2,
-      "glass_carafe": 1,
-      "gooseneck_kettle": 5,
-      "kettle": 3,
+      "dripper": 3,
+      "kettle": 12,
       "lid": 1,
+      "scale": 1,
       "table": 2,
       "wooden_scoop": 1
     },
@@ -672,12 +1586,42 @@
         "provenance": "caption.interaction_text+object_match"
       },
       {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72877805630083",
+        "segment_id": 1,
+        "text": "The right hand is gripping the handle of the kettle, holding it above the coffee station.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
         "type": "hand_contacts",
         "subject": "hand",
-        "object": "coffee_dripper",
+        "object": "dripper",
         "timestamp": "72883804786336",
         "segment_id": 1,
         "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_contacts",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72883804786336",
+        "segment_id": 1,
+        "text": "The kettle is being angled and positioned precisely over the coffee dripper by the hand.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
+        "timestamp": "72895806166842",
+        "segment_id": 1,
+        "text": "The user maintains a steady hold on the kettle, aligning the spout for the impending water pour.",
         "confidence": 0.65,
         "provenance": "caption.interaction_text+object_match"
       },
@@ -724,7 +1668,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "glass_carafe",
+        "object": "carafe",
         "timestamp": "72907804785931",
         "segment_id": 3,
         "text": "User's hands are holding the glass carafe.",
@@ -804,7 +1748,17 @@
       {
         "type": "hand_interacts_with",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "scale",
+        "timestamp": "72957804786497",
+        "segment_id": 6,
+        "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_interacts_with",
+        "subject": "hand",
+        "object": "kettle",
         "timestamp": "72957804786497",
         "segment_id": 6,
         "text": "The right hand is gripping the handle of the gooseneck kettle, while the left hand is resting near the scale.",
@@ -814,7 +1768,17 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
+        "timestamp": "72975806764297",
+        "segment_id": 6,
+        "text": "The person continues to hold the kettle handle in a steady position before starting the pour.",
+        "confidence": 0.65,
+        "provenance": "caption.interaction_text+object_match"
+      },
+      {
+        "type": "hand_grasps",
+        "subject": "hand",
+        "object": "kettle",
         "timestamp": "72977804786464",
         "segment_id": 7,
         "text": "hands positioned near the gooseneck kettle, holding it in readiness",
@@ -824,7 +1788,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
         "timestamp": "72995804785348",
         "segment_id": 7,
         "text": "hands continue to hold the gooseneck kettle steady over the table workspace",
@@ -834,7 +1798,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
         "timestamp": "73005806914853",
         "segment_id": 8,
         "text": "The user's right hand is actively holding and lifting the gooseneck kettle.",
@@ -844,7 +1808,7 @@
       {
         "type": "hand_grasps",
         "subject": "hand",
-        "object": "gooseneck_kettle",
+        "object": "kettle",
         "timestamp": "73007804786395",
         "segment_id": 9,
         "text": "right hand grasping the handle of the gooseneck kettle",
