@@ -1,0 +1,10 @@
+{
+  "base_num_objects": 18,
+  "candidate_num_objects": 18,
+  "added_objects": [],
+  "removed_objects": [],
+  "base_num_relations": 155,
+  "candidate_num_relations": 155,
+  "added_relation_count": 0,
+  "detector_relation_count": 23
+}

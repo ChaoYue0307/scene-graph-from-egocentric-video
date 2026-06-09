@@ -8,6 +8,11 @@ outputs/*
 !outputs/sample_graph/scene_graph.json
 !outputs/sample_graph/query_results.json
 !outputs/sample_graph/schema.json
+!outputs/detector_graph/
+!outputs/detector_graph/scene_graph.json
+!outputs/detector_graph/query_results.json
+!outputs/detector_graph/schema.json
+!outputs/detector_graph/graph_comparison.json
 /data/
 *.hdf5
 *.mp4

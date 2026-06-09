@@ -1,0 +1,385 @@
+{
+  "source": "annotation-grounded detector/tracker fixture for exercising the graph merge path",
+  "detections": [
+    {
+      "timestamp": "72857807732824",
+      "frame_index": 0,
+      "objects": [
+        {
+          "label": "bottle",
+          "track_id": "bottle-0",
+          "confidence": 0.78,
+          "bbox_xyxy": [
+            48,
+            36,
+            120,
+            104
+          ]
+        },
+        {
+          "label": "coffee dripper",
+          "track_id": "coffee_dripper-1",
+          "confidence": 0.81,
+          "bbox_xyxy": [
+            109,
+            79,
+            188,
+            147
+          ]
+        },
+        {
+          "label": "kettle",
+          "track_id": "kettle-2",
+          "confidence": 0.84,
+          "bbox_xyxy": [
+            170,
+            122,
+            256,
+            190
+          ]
+        },
+        {
+          "label": "scale",
+          "track_id": "scale-3",
+          "confidence": 0.87,
+          "bbox_xyxy": [
+            231,
+            165,
+            324,
+            233
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72859805540867",
+      "frame_index": 1,
+      "objects": []
+    },
+    {
+      "timestamp": "72861806966951",
+      "frame_index": 2,
+      "objects": []
+    },
+    {
+      "timestamp": "72863804786785",
+      "frame_index": 3,
+      "objects": [
+        {
+          "label": "kettle",
+          "track_id": "kettle-0",
+          "confidence": 0.87,
+          "bbox_xyxy": [
+            99,
+            69,
+            171,
+            152
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72865805406411",
+      "frame_index": 4,
+      "objects": []
+    },
+    {
+      "timestamp": "72867806545037",
+      "frame_index": 5,
+      "objects": []
+    },
+    {
+      "timestamp": "72869804786246",
+      "frame_index": 6,
+      "objects": []
+    },
+    {
+      "timestamp": "72871804786081",
+      "frame_index": 7,
+      "objects": []
+    },
+    {
+      "timestamp": "72873807112873",
+      "frame_index": 8,
+      "objects": []
+    },
+    {
+      "timestamp": "72875807554333",
+      "frame_index": 9,
+      "objects": [
+        {
+          "label": "coffee dripper",
+          "track_id": "coffee_dripper-0",
+          "confidence": 0.9,
+          "bbox_xyxy": [
+            201,
+            135,
+            273,
+            204
+          ]
+        },
+        {
+          "label": "kettle",
+          "track_id": "kettle-1",
+          "confidence": 0.78,
+          "bbox_xyxy": [
+            262,
+            178,
+            341,
+            247
+          ]
+        },
+        {
+          "label": "scale",
+          "track_id": "scale-2",
+          "confidence": 0.81,
+          "bbox_xyxy": [
+            323,
+            221,
+            409,
+            290
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72877805630083",
+      "frame_index": 10,
+      "objects": [
+        {
+          "label": "coffee dripper",
+          "track_id": "coffee_dripper-0",
+          "confidence": 0.78,
+          "bbox_xyxy": [
+            218,
+            146,
+            290,
+            220
+          ]
+        },
+        {
+          "label": "digital scale",
+          "track_id": "digital_scale-1",
+          "confidence": 0.81,
+          "bbox_xyxy": [
+            279,
+            189,
+            358,
+            263
+          ]
+        },
+        {
+          "label": "gooseneck kettle",
+          "track_id": "gooseneck_kettle-2",
+          "confidence": 0.84,
+          "bbox_xyxy": [
+            340,
+            232,
+            426,
+            306
+          ]
+        },
+        {
+          "label": "table",
+          "track_id": "table-3",
+          "confidence": 0.87,
+          "bbox_xyxy": [
+            401,
+            275,
+            494,
+            349
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72879806166584",
+      "frame_index": 11,
+      "objects": []
+    },
+    {
+      "timestamp": "72881804786502",
+      "frame_index": 12,
+      "objects": []
+    },
+    {
+      "timestamp": "72883804786336",
+      "frame_index": 13,
+      "objects": [
+        {
+          "label": "coffee dripper",
+          "track_id": "coffee_dripper-0",
+          "confidence": 0.87,
+          "bbox_xyxy": [
+            269,
+            179,
+            341,
+            268
+          ]
+        },
+        {
+          "label": "digital scale",
+          "track_id": "digital_scale-1",
+          "confidence": 0.9,
+          "bbox_xyxy": [
+            330,
+            222,
+            409,
+            311
+          ]
+        },
+        {
+          "label": "gooseneck kettle",
+          "track_id": "gooseneck_kettle-2",
+          "confidence": 0.78,
+          "bbox_xyxy": [
+            391,
+            265,
+            477,
+            354
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72885804787921",
+      "frame_index": 14,
+      "objects": []
+    },
+    {
+      "timestamp": "72887804785797",
+      "frame_index": 15,
+      "objects": []
+    },
+    {
+      "timestamp": "72889804786173",
+      "frame_index": 16,
+      "objects": []
+    },
+    {
+      "timestamp": "72891805764257",
+      "frame_index": 17,
+      "objects": []
+    },
+    {
+      "timestamp": "72893804785424",
+      "frame_index": 18,
+      "objects": []
+    },
+    {
+      "timestamp": "72895806166842",
+      "frame_index": 19,
+      "objects": [
+        {
+          "label": "coffee dripper",
+          "track_id": "coffee_dripper-0",
+          "confidence": 0.9,
+          "bbox_xyxy": [
+            371,
+            245,
+            443,
+            320
+          ]
+        },
+        {
+          "label": "digital scale",
+          "track_id": "digital_scale-1",
+          "confidence": 0.78,
+          "bbox_xyxy": [
+            432,
+            38,
+            511,
+            113
+          ]
+        },
+        {
+          "label": "gooseneck kettle",
+          "track_id": "gooseneck_kettle-2",
+          "confidence": 0.81,
+          "bbox_xyxy": [
+            73,
+            81,
+            159,
+            156
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72897804785676",
+      "frame_index": 20,
+      "objects": [
+        {
+          "label": "coffee filter",
+          "track_id": "coffee_filter-0",
+          "confidence": 0.78,
+          "bbox_xyxy": [
+            388,
+            256,
+            460,
+            336
+          ]
+        },
+        {
+          "label": "dripper",
+          "track_id": "dripper-1",
+          "confidence": 0.81,
+          "bbox_xyxy": [
+            449,
+            49,
+            528,
+            129
+          ]
+        },
+        {
+          "label": "kettle",
+          "track_id": "kettle-2",
+          "confidence": 0.84,
+          "bbox_xyxy": [
+            90,
+            92,
+            176,
+            172
+          ]
+        },
+        {
+          "label": "scale",
+          "track_id": "scale-3",
+          "confidence": 0.87,
+          "bbox_xyxy": [
+            151,
+            135,
+            244,
+            215
+          ]
+        },
+        {
+          "label": "table",
+          "track_id": "table-4",
+          "confidence": 0.9,
+          "bbox_xyxy": [
+            212,
+            178,
+            312,
+            258
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "72899804784761",
+      "frame_index": 21,
+      "objects": []
+    },
+    {
+      "timestamp": "72901804785137",
+      "frame_index": 22,
+      "objects": []
+    },
+    {
+      "timestamp": "72903807028554",
+      "frame_index": 23,
+      "objects": []
+    }
+  ]
+}

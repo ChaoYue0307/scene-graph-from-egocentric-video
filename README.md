@@ -18,6 +18,7 @@ The graph connects four kinds of evidence:
 
 ![Scene graph tutorial preview](docs/assets/readme_preview.svg)
 ![Animated scene graph demo loop](docs/assets/demo_loop.svg)
+![Live tutorial screenshot](docs/assets/live_screenshot.png)
 
 ## Interactive Tutorial
 
@@ -111,6 +112,9 @@ ego-scene-graph \
   --detections-json outputs/detections.json
 ```
 
+This repo includes `docs/data/sample_detections.json`, an annotation-grounded
+detector/tracker fixture used to exercise the merge path and provenance logic.
+
 To compare a detector-merged graph against a caption-only graph:
 
 ```bash
@@ -143,6 +147,7 @@ Minimal detection record:
 | `schema.json` | the graph contract shared by exporters and query tools |
 | `query_results.json` | example answers for object timelines, interactions, and state |
 | `graph_comparison.json` | caption-only versus detector-merged graph comparison when requested |
+| `docs/data/sample_detections.json` | detector/tracker-style fixture with bounding boxes, confidence, and track ids |
 
 ## Relation Types
 

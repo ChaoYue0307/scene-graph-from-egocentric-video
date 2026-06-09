@@ -10,7 +10,13 @@
       "first_seen": "72857807732824",
       "last_seen": "73007804786395",
       "observations": 15,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects+detector.tracker_json",
+      "track_ids": [
+        "gooseneck_kettle-2",
+        "kettle-0",
+        "kettle-1",
+        "kettle-2"
+      ]
     },
     "timeline": [
       {
@@ -27,18 +33,72 @@
         "action": "Pick up kettle",
         "object_sources": {
           "bottle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "bottle",
+            "track_id": "bottle-0",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              48,
+              36,
+              120,
+              104
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-1",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              109,
+              79,
+              188,
+              147
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "kettle",
+            "track_id": "kettle-2",
+            "confidence": 0.84,
+            "bbox_xyxy": [
+              170,
+              122,
+              256,
+              190
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "scale",
+            "track_id": "scale-3",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              231,
+              165,
+              324,
+              233
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.124226,
@@ -64,9 +124,24 @@
         "action": "Pick up kettle",
         "object_sources": {
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "kettle",
+            "track_id": "kettle-0",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              99,
+              69,
+              171,
+              152
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.136922,
@@ -94,15 +169,56 @@
         "action": "Position kettle to pour",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              201,
+              135,
+              273,
+              204
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "kettle",
+            "track_id": "kettle-1",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              262,
+              178,
+              341,
+              247
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "scale",
+            "track_id": "scale-2",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              323,
+              221,
+              409,
+              290
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.084954,
@@ -131,18 +247,72 @@
         "action": "",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "table": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              218,
+              146,
+              290,
+              220
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "digital scale",
+            "track_id": "digital_scale-1",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              279,
+              189,
+              358,
+              263
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "gooseneck kettle",
+            "track_id": "gooseneck_kettle-2",
+            "confidence": 0.84,
+            "bbox_xyxy": [
+              340,
+              232,
+              426,
+              306
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "table",
+            "track_id": "table-3",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              401,
+              275,
+              494,
+              349
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.359029,
@@ -170,15 +340,56 @@
         "action": "",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              269,
+              179,
+              341,
+              268
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "digital scale",
+            "track_id": "digital_scale-1",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              330,
+              222,
+              409,
+              311
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "gooseneck kettle",
+            "track_id": "gooseneck_kettle-2",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              391,
+              265,
+              477,
+              354
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.127773,
@@ -206,15 +417,56 @@
         "action": "",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              371,
+              245,
+              443,
+              320
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "digital scale",
+            "track_id": "digital_scale-1",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              432,
+              38,
+              511,
+              113
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "gooseneck kettle",
+            "track_id": "gooseneck_kettle-2",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              73,
+              81,
+              159,
+              156
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.113114,
@@ -244,21 +496,88 @@
         "action": "Move kettle",
         "object_sources": {
           "coffee_filter": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "table": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee filter",
+            "track_id": "coffee_filter-0",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              388,
+              256,
+              460,
+              336
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "dripper",
+            "track_id": "dripper-1",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              449,
+              49,
+              528,
+              129
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "kettle",
+            "track_id": "kettle-2",
+            "confidence": 0.84,
+            "bbox_xyxy": [
+              90,
+              92,
+              176,
+              172
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "scale",
+            "track_id": "scale-3",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              151,
+              135,
+              244,
+              215
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "table",
+            "track_id": "table-4",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              212,
+              178,
+              312,
+              258
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.172754,
@@ -620,16 +939,16 @@
         "subject": "kettle",
         "object": "frame:0",
         "timestamp": "72857807732824",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.84,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "visible_in",
         "subject": "kettle",
         "object": "frame:3",
         "timestamp": "72863804786785",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.87,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_grasps",
@@ -646,16 +965,16 @@
         "subject": "kettle",
         "object": "frame:9",
         "timestamp": "72875807554333",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.78,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "visible_in",
         "subject": "kettle",
         "object": "frame:10",
         "timestamp": "72877805630083",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.84,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_grasps",
@@ -672,8 +991,8 @@
         "subject": "kettle",
         "object": "frame:13",
         "timestamp": "72883804786336",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.78,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_contacts",
@@ -690,8 +1009,8 @@
         "subject": "kettle",
         "object": "frame:19",
         "timestamp": "72895806166842",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.81,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_grasps",
@@ -708,8 +1027,8 @@
         "subject": "kettle",
         "object": "frame:20",
         "timestamp": "72897804785676",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.84,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_moves_toward",
@@ -1133,7 +1452,13 @@
       "first_seen": "72857807732824",
       "last_seen": "73007804786395",
       "observations": 15,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects+detector.tracker_json",
+      "track_ids": [
+        "gooseneck_kettle-2",
+        "kettle-0",
+        "kettle-1",
+        "kettle-2"
+      ]
     },
     "timeline": [
       {
@@ -1150,18 +1475,72 @@
         "action": "Pick up kettle",
         "object_sources": {
           "bottle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "bottle",
+            "track_id": "bottle-0",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              48,
+              36,
+              120,
+              104
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-1",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              109,
+              79,
+              188,
+              147
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "kettle",
+            "track_id": "kettle-2",
+            "confidence": 0.84,
+            "bbox_xyxy": [
+              170,
+              122,
+              256,
+              190
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "scale",
+            "track_id": "scale-3",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              231,
+              165,
+              324,
+              233
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.124226,
@@ -1187,9 +1566,24 @@
         "action": "Pick up kettle",
         "object_sources": {
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "kettle",
+            "track_id": "kettle-0",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              99,
+              69,
+              171,
+              152
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.136922,
@@ -1217,15 +1611,56 @@
         "action": "Position kettle to pour",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              201,
+              135,
+              273,
+              204
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "kettle",
+            "track_id": "kettle-1",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              262,
+              178,
+              341,
+              247
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "scale",
+            "track_id": "scale-2",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              323,
+              221,
+              409,
+              290
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.084954,
@@ -1254,18 +1689,72 @@
         "action": "",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "table": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              218,
+              146,
+              290,
+              220
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "digital scale",
+            "track_id": "digital_scale-1",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              279,
+              189,
+              358,
+              263
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "gooseneck kettle",
+            "track_id": "gooseneck_kettle-2",
+            "confidence": 0.84,
+            "bbox_xyxy": [
+              340,
+              232,
+              426,
+              306
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "table",
+            "track_id": "table-3",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              401,
+              275,
+              494,
+              349
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.359029,
@@ -1293,15 +1782,56 @@
         "action": "",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              269,
+              179,
+              341,
+              268
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "digital scale",
+            "track_id": "digital_scale-1",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              330,
+              222,
+              409,
+              311
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "gooseneck kettle",
+            "track_id": "gooseneck_kettle-2",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              391,
+              265,
+              477,
+              354
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.127773,
@@ -1329,15 +1859,56 @@
         "action": "",
         "object_sources": {
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee dripper",
+            "track_id": "coffee_dripper-0",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              371,
+              245,
+              443,
+              320
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "digital scale",
+            "track_id": "digital_scale-1",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              432,
+              38,
+              511,
+              113
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "gooseneck kettle",
+            "track_id": "gooseneck_kettle-2",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              73,
+              81,
+              159,
+              156
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.113114,
@@ -1367,21 +1938,88 @@
         "action": "Move kettle",
         "object_sources": {
           "coffee_filter": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "dripper": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "kettle": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "scale": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ],
           "table": [
-            "caption.objects"
+            "caption.objects",
+            "detector.tracker_json"
           ]
         },
+        "detector_objects": [
+          {
+            "name": "coffee filter",
+            "track_id": "coffee_filter-0",
+            "confidence": 0.78,
+            "bbox_xyxy": [
+              388,
+              256,
+              460,
+              336
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "dripper",
+            "track_id": "dripper-1",
+            "confidence": 0.81,
+            "bbox_xyxy": [
+              449,
+              49,
+              528,
+              129
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "kettle",
+            "track_id": "kettle-2",
+            "confidence": 0.84,
+            "bbox_xyxy": [
+              90,
+              92,
+              176,
+              172
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "scale",
+            "track_id": "scale-3",
+            "confidence": 0.87,
+            "bbox_xyxy": [
+              151,
+              135,
+              244,
+              215
+            ],
+            "provenance": "detector.tracker_json"
+          },
+          {
+            "name": "table",
+            "track_id": "table-4",
+            "confidence": 0.9,
+            "bbox_xyxy": [
+              212,
+              178,
+              312,
+              258
+            ],
+            "provenance": "detector.tracker_json"
+          }
+        ],
         "camera_pose": {
           "position_xyz": [
             -0.172754,
@@ -1743,16 +2381,16 @@
         "subject": "kettle",
         "object": "frame:0",
         "timestamp": "72857807732824",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.84,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "visible_in",
         "subject": "kettle",
         "object": "frame:3",
         "timestamp": "72863804786785",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.87,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_grasps",
@@ -1769,16 +2407,16 @@
         "subject": "kettle",
         "object": "frame:9",
         "timestamp": "72875807554333",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.78,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "visible_in",
         "subject": "kettle",
         "object": "frame:10",
         "timestamp": "72877805630083",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.84,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_grasps",
@@ -1795,8 +2433,8 @@
         "subject": "kettle",
         "object": "frame:13",
         "timestamp": "72883804786336",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.78,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_contacts",
@@ -1813,8 +2451,8 @@
         "subject": "kettle",
         "object": "frame:19",
         "timestamp": "72895806166842",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.81,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_grasps",
@@ -1831,8 +2469,8 @@
         "subject": "kettle",
         "object": "frame:20",
         "timestamp": "72897804785676",
-        "confidence": 0.85,
-        "provenance": "caption.objects"
+        "confidence": 0.84,
+        "provenance": "caption.objects+detector.tracker_json"
       },
       {
         "type": "hand_moves_toward",
