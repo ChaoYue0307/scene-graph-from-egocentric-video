@@ -6,6 +6,9 @@ Learn how to convert first-person video annotations into a structured world
 memory that can answer questions about objects, hand-object interactions, and
 task state.
 
+Part of the Egocentric Vision Learning Hub:
+https://chaoyue0307.github.io/egocentric-vision-learning-hub/
+
 The graph connects four kinds of evidence:
 
 - object names from caption annotations,
@@ -52,6 +55,15 @@ See `DATA_NOTICE.md` for the minimal data contract.
 | `docs/concepts.md` | glossary for scene graph and world-memory terms |
 | `outputs/sample_graph/scene_graph.json` | sample temporal graph |
 | `outputs/sample_graph/query_results.json` | sample object, interaction, and state queries |
+
+## Common Commands
+
+```bash
+make test
+make help
+make visuals
+make pages
+```
 
 ## Build The Scene Graph
 
