@@ -305,11 +305,30 @@ def run_query(graph: dict, query: str) -> dict:
     raise ValueError(f"Unknown query: {query}")
 
 
+def compare_graphs(base_graph: dict, candidate_graph: dict) -> dict:
+    base_objects = set(base_graph.get("objects", {}))
+    candidate_objects = set(candidate_graph.get("objects", {}))
+    base_relations = base_graph.get("relations", [])
+    candidate_relations = candidate_graph.get("relations", [])
+    detector_relations = [rel for rel in candidate_relations if "detector.tracker_json" in rel.get("provenance", "")]
+    return {
+        "base_num_objects": len(base_objects),
+        "candidate_num_objects": len(candidate_objects),
+        "added_objects": sorted(candidate_objects - base_objects),
+        "removed_objects": sorted(base_objects - candidate_objects),
+        "base_num_relations": len(base_relations),
+        "candidate_num_relations": len(candidate_relations),
+        "added_relation_count": max(0, len(candidate_relations) - len(base_relations)),
+        "detector_relation_count": len(detector_relations),
+    }
+
+
 def parse_args() -> argparse.Namespace:
     root_default = Path(__file__).resolve().parents[2] / "data/sample/xperience-10m-sample"
     parser = argparse.ArgumentParser(description="Export and query a temporal scene graph from an egocentric Xperience sample.")
     parser.add_argument("--data-root", type=Path, default=root_default)
     parser.add_argument("--graph-json", type=Path, help="Query an existing scene_graph.json without requiring raw data.")
+    parser.add_argument("--compare-graph-json", type=Path, help="Compare the current graph with another graph JSON, such as caption-only versus detector-merged.")
     parser.add_argument("--detections-json", type=Path, help="Optional detector/tracker JSON with timestamped objects to merge into the graph.")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/sample_graph"))
     parser.add_argument("--max-frames", type=int, default=80)
@@ -328,6 +347,9 @@ def main() -> int:
     results = [run_query(graph, query) for query in args.query]
     (args.output_dir / "query_results.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
     (args.output_dir / "schema.json").write_text(json.dumps(SCHEMA, indent=2), encoding="utf-8")
+    if args.compare_graph_json:
+        other = json.loads(args.compare_graph_json.read_text(encoding="utf-8"))
+        (args.output_dir / "graph_comparison.json").write_text(json.dumps(compare_graphs(other, graph), indent=2), encoding="utf-8")
     print(f"frames={graph['metadata']['num_frames']} objects={graph['metadata']['num_objects']} relations={graph['metadata']['num_relations']}")
     return 0
 

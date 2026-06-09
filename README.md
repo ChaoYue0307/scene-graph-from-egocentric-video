@@ -17,6 +17,7 @@ The graph connects four kinds of evidence:
 - SLAM camera poses attached to timestamps.
 
 ![Scene graph tutorial preview](docs/assets/readme_preview.svg)
+![Animated scene graph demo loop](docs/assets/demo_loop.svg)
 
 ## Interactive Tutorial
 
@@ -110,6 +111,15 @@ ego-scene-graph \
   --detections-json outputs/detections.json
 ```
 
+To compare a detector-merged graph against a caption-only graph:
+
+```bash
+ego-scene-graph \
+  --graph-json outputs/detector_graph/scene_graph.json \
+  --compare-graph-json outputs/sample_graph/scene_graph.json \
+  --output-dir outputs/graph_comparison
+```
+
 Minimal detection record:
 
 ```json
@@ -132,6 +142,7 @@ Minimal detection record:
 | `scene_graph.json` | frames, objects, relations, task segments, provenance, and confidence |
 | `schema.json` | the graph contract shared by exporters and query tools |
 | `query_results.json` | example answers for object timelines, interactions, and state |
+| `graph_comparison.json` | caption-only versus detector-merged graph comparison when requested |
 
 ## Relation Types
 

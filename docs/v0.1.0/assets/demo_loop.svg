@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" role="img" aria-label="Animated demo preview for scene graph memory">
+  <rect width="960" height="240" rx="28" fill="#020617"/>
+  <text x="40" y="52" fill="#f8fafc" font-family="Inter,Arial" font-size="28" font-weight="800">Scene graph demo loop</text>
+  <text x="40" y="82" fill="#94a3b8" font-family="Inter,Arial" font-size="15">objects ’ relations ’ timeline ’ query answer</text>
+  <g stroke="#334155" stroke-width="3">
+    <line x1="480" y1="145" x2="230" y2="120"/><line x1="480" y1="145" x2="730" y2="120"/><line x1="480" y1="145" x2="360" y2="190"/><line x1="480" y1="145" x2="600" y2="190"/>
+  </g>
+  <g fill="#0f172a" stroke="#22d3ee" stroke-width="3">
+    <circle cx="480" cy="145" r="42"/><circle cx="230" cy="120" r="32"/><circle cx="730" cy="120" r="32"/><circle cx="360" cy="190" r="32"/><circle cx="600" cy="190" r="32"/>
+  </g>
+  <circle cx="230" cy="120" r="38" fill="none" stroke="#c084fc" stroke-width="4">
+    <animate attributeName="cx" values="230;480;730;600;360;230" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="120;145;120;190;190;120" dur="5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

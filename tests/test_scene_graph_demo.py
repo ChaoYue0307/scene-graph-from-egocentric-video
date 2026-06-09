@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from adapters import XperienceSceneGraphAdapter  # noqa: E402
-from scene_graph_demo import detector_records_by_timestamp, frame_records_from_caption, main, merge_detector_records, norm_object, query_object, relation_type, run_query  # noqa: E402
+from scene_graph_demo import compare_graphs, detector_records_by_timestamp, frame_records_from_caption, main, merge_detector_records, norm_object, query_object, relation_type, run_query  # noqa: E402
 
 
 def test_norm_object_merges_aliases() -> None:
@@ -98,3 +98,17 @@ def test_xperience_scene_graph_adapter_paths(tmp_path: Path) -> None:
     assert adapter.annotation_path == tmp_path / "annotation.hdf5"
     assert adapter.describe()["detections_path"] == str(detections)
     assert "optional_detector_tracks" in adapter.describe()["signals"]
+
+
+def test_compare_graphs_counts_added_detector_objects() -> None:
+    base = {"objects": {"kettle": {}}, "relations": [{"type": "visible_in"}]}
+    candidate = {
+        "objects": {"kettle": {}, "mug": {}},
+        "relations": [
+            {"type": "visible_in"},
+            {"type": "visible_in", "provenance": "detector.tracker_json"},
+        ],
+    }
+    comparison = compare_graphs(base, candidate)
+    assert comparison["added_objects"] == ["mug"]
+    assert comparison["detector_relation_count"] == 1

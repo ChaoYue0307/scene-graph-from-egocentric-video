@@ -32,8 +32,34 @@ def render(graph_path: Path, output_path: Path) -> None:
     output_path.write_text(svg, encoding="utf-8")
 
 
+def render_timeline(graph_path: Path, output_path: Path) -> None:
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    frames = graph["frames"][:12]
+    if not frames:
+        return
+    ticks = []
+    for idx, frame in enumerate(frames):
+        x = 70 + idx * 54
+        label = (frame.get("action") or frame.get("subtask") or "frame")[:14]
+        obj_count = len(frame.get("objects", []))
+        ticks.append(f'<circle cx="{x}" cy="150" r="{6 + min(obj_count, 8)}" fill="#22d3ee" opacity=".85"/>')
+        ticks.append(f'<text x="{x}" y="188" fill="#94a3b8" font-family="Inter,Arial" font-size="10" text-anchor="middle">{idx}</text>')
+        ticks.append(f'<text x="{x}" y="210" fill="#cbd5e1" font-family="Inter,Arial" font-size="10" text-anchor="middle">{label}</text>')
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300">
+  <rect width="760" height="300" rx="28" fill="#020617"/>
+  <text x="48" y="48" fill="#f8fafc" font-size="26" font-weight="700" font-family="Inter, Arial">Scene Graph Timeline</text>
+  <text x="48" y="76" fill="#94a3b8" font-size="15" font-family="Inter, Arial">First 12 sampled frames · bubble size reflects visible object count</text>
+  <path d="M70 150 H664" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+  {''.join(ticks)}
+</svg>
+"""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(svg, encoding="utf-8")
+
+
 def main() -> int:
     render(Path("outputs/sample_graph/scene_graph.json"), Path("docs/assets/top_objects.svg"))
+    render_timeline(Path("outputs/sample_graph/scene_graph.json"), Path("docs/assets/graph_timeline.svg"))
     return 0
 
 
