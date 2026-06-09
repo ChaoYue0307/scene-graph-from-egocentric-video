@@ -20,12 +20,20 @@ caption-derived objects while preserving confidence, track ids, and provenance.
 - `query_results.json`: object memory, interaction, and state query examples.
 - `schema.json`: graph contract.
 - `top_objects.svg`: object-frequency visual.
+- `visual_detections.json`: OpenCV contour proposals from real video frames.
+- `graph_comparison.json`: caption-only versus detector-merged graph comparison.
 
 ## Interpretation
 
 The current graph is transparent and inspectable. It is useful for learning
 world-memory structure and query design, but it is not a substitute for a
 validated detector, tracker, segmenter, or relation classifier.
+
+The detector path now includes a visual-proposal option that reads real video
+frames, extracts contour-based bounding boxes, and stores detector-style
+confidence, track id, and `bbox_xyxy` fields. Object labels are still associated
+with graph-visible names, so this is a stronger integration test rather than a
+trained recognition result.
 
 ## Failure Modes
 

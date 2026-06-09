@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": [
+    "metadata",
+    "frames",
+    "objects",
+    "relations",
+    "segments",
+    "provenance"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object"
+    },
+    "frames": {
+      "type": "array",
+      "description": "Timestamped egocentric observations."
+    },
+    "objects": {
+      "type": "object",
+      "description": "Object-centric memory keyed by normalized object id."
+    },
+    "relations": {
+      "type": "array",
+      "description": "Temporal relations such as visible_in and hand_interacts_with."
+    },
+    "segments": {
+      "type": "array",
+      "description": "Task/subtask/action intervals."
+    },
+    "provenance": {
+      "type": "object",
+      "description": "How each field was generated."
+    }
+  }
+}

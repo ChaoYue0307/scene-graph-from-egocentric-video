@@ -20,6 +20,8 @@ The graph connects four kinds of evidence:
 ![Animated scene graph demo loop](docs/assets/demo_loop.svg)
 ![Live tutorial screenshot](docs/assets/live_screenshot.png)
 
+Short walkthrough recording: [`docs/assets/walkthrough.webm`](docs/assets/walkthrough.webm)
+
 ## Interactive Tutorial
 
 Open the visual graph walkthrough:
@@ -114,6 +116,8 @@ ego-scene-graph \
 
 This repo includes `docs/data/sample_detections.json`, an annotation-grounded
 detector/tracker fixture used to exercise the merge path and provenance logic.
+For a more visual path, run `make visual-detections`; it creates OpenCV contour
+proposals from real video frames and writes `docs/data/visual_detections.json`.
 
 To compare a detector-merged graph against a caption-only graph:
 
@@ -148,6 +152,7 @@ Minimal detection record:
 | `query_results.json` | example answers for object timelines, interactions, and state |
 | `graph_comparison.json` | caption-only versus detector-merged graph comparison when requested |
 | `docs/data/sample_detections.json` | detector/tracker-style fixture with bounding boxes, confidence, and track ids |
+| `docs/data/visual_detections.json` | OpenCV visual-proposal detector output associated with graph object labels |
 
 ## Relation Types
 

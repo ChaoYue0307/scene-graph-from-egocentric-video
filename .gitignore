@@ -13,6 +13,11 @@ outputs/*
 !outputs/detector_graph/query_results.json
 !outputs/detector_graph/schema.json
 !outputs/detector_graph/graph_comparison.json
+!outputs/visual_detector_graph/
+!outputs/visual_detector_graph/scene_graph.json
+!outputs/visual_detector_graph/query_results.json
+!outputs/visual_detector_graph/schema.json
+!outputs/visual_detector_graph/graph_comparison.json
 /data/
 *.hdf5
 *.mp4
