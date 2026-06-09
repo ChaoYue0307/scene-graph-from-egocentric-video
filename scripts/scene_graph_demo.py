@@ -130,11 +130,57 @@ def segment_records(caption: dict) -> list[dict]:
     return rows
 
 
-def build_scene_graph(data_root: Path, max_frames: int | None) -> dict:
+def detector_records_by_timestamp(detections_json: Path | None, frames: list[dict]) -> dict[str, list[dict]]:
+    if detections_json is None:
+        return {}
+    payload = json.loads(detections_json.read_text(encoding="utf-8"))
+    rows = payload.get("detections", payload) if isinstance(payload, dict) else payload
+    by_ts: dict[str, list[dict]] = defaultdict(list)
+    for row in rows:
+        timestamp = row.get("timestamp")
+        if timestamp is None and "frame_index" in row:
+            idx = int(row["frame_index"])
+            if 0 <= idx < len(frames):
+                timestamp = frames[idx]["timestamp"]
+        if timestamp is None:
+            continue
+        objects = row.get("objects", row.get("detections", []))
+        for item in objects:
+            label = str(item.get("label", item.get("name", ""))).strip()
+            if not label:
+                continue
+            by_ts[str(timestamp)].append({
+                "name": label,
+                "track_id": item.get("track_id"),
+                "confidence": float(item.get("confidence", row.get("confidence", 0.5))),
+                "bbox_xyxy": item.get("bbox_xyxy", item.get("bbox")),
+                "provenance": "detector.tracker_json",
+            })
+    return by_ts
+
+
+def merge_detector_records(frames: list[dict], detections_by_ts: dict[str, list[dict]]) -> list[dict]:
+    for frame in frames:
+        sources = {norm_object(name): {"caption.objects"} for name in frame.get("objects", [])}
+        dets = detections_by_ts.get(frame["timestamp"], [])
+        for det in dets:
+            sources.setdefault(norm_object(det["name"]), set()).add("detector.tracker_json")
+        frame["object_sources"] = {name: sorted(values) for name, values in sources.items()}
+        if not dets:
+            continue
+        frame["detector_objects"] = dets
+        labels = [det["name"] for det in dets]
+        frame["objects"] = sorted(set(frame.get("objects", [])) | set(labels))
+    return frames
+
+
+def build_scene_graph(data_root: Path, max_frames: int | None, detections_json: Path | None = None) -> dict:
     annotation = data_root / "annotation.hdf5"
     caption = load_caption(annotation)
     poses = load_slam_pose_preview(annotation)
     frames = frame_records_from_caption(caption, max_frames)
+    detections_by_ts = detector_records_by_timestamp(detections_json, frames)
+    frames = merge_detector_records(frames, detections_by_ts)
     objects: dict[str, dict] = {}
     relations = []
     object_counts = Counter()
@@ -142,8 +188,17 @@ def build_scene_graph(data_root: Path, max_frames: int | None) -> dict:
     for frame_idx, frame in enumerate(frames):
         ts = frame["timestamp"]
         frame["camera_pose"] = poses.get(ts)
+        detector_by_id = {norm_object(row["name"]): row for row in frame.get("detector_objects", [])}
+        seen_frame_objects = set()
         for obj_name in frame["objects"]:
             obj_id = norm_object(obj_name)
+            if obj_id in seen_frame_objects:
+                if obj_id in objects:
+                    objects[obj_id]["aliases"] = sorted(set(objects[obj_id]["aliases"]) | {obj_name})
+                continue
+            seen_frame_objects.add(obj_id)
+            detector_hit = detector_by_id.get(obj_id)
+            provenance = "+".join(frame.get("object_sources", {}).get(obj_id, ["caption.objects"]))
             object_counts[obj_id] += 1
             record = objects.setdefault(obj_id, {
                 "name": obj_name,
@@ -151,18 +206,20 @@ def build_scene_graph(data_root: Path, max_frames: int | None) -> dict:
                 "first_seen": ts,
                 "last_seen": ts,
                 "observations": 0,
-                "provenance": "caption.objects",
+                "provenance": provenance,
             })
             record["last_seen"] = ts
             record["observations"] += 1
             record["aliases"] = sorted(set(record["aliases"]) | {obj_name})
+            if detector_hit and detector_hit.get("track_id") is not None:
+                record["track_ids"] = sorted(set(record.get("track_ids", [])) | {str(detector_hit["track_id"])})
             relations.append({
                 "type": "visible_in",
                 "subject": obj_id,
                 "object": f"frame:{frame_idx}",
                 "timestamp": ts,
-                "confidence": 0.85,
-                "provenance": "caption.objects",
+                "confidence": float(detector_hit.get("confidence", 0.85)) if detector_hit else 0.85,
+                "provenance": provenance,
             })
         text = frame.get("interaction_text", "")
         low = text.lower()
@@ -207,7 +264,7 @@ def build_scene_graph(data_root: Path, max_frames: int | None) -> dict:
             "objects": "Caption object annotations in annotation.hdf5.",
             "relations": "Rule-based extraction from object lists, interaction text, and action intervals.",
             "camera_pose": "SLAM trans_xyz and quat_wxyz matched by timestamp when present.",
-            "future_detector_hook": "Replace or merge caption.objects with YOLO/SAM detector outputs.",
+            "detector_hook": "Optional --detections-json merges detector/tracker object records with caption objects.",
         },
     }
 
@@ -253,6 +310,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Export and query a temporal scene graph from an egocentric Xperience sample.")
     parser.add_argument("--data-root", type=Path, default=root_default)
     parser.add_argument("--graph-json", type=Path, help="Query an existing scene_graph.json without requiring raw data.")
+    parser.add_argument("--detections-json", type=Path, help="Optional detector/tracker JSON with timestamped objects to merge into the graph.")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/sample_graph"))
     parser.add_argument("--max-frames", type=int, default=80)
     parser.add_argument("--query", action="append", default=["object:kettle", "interactions", "state:last"], help="Query: object:<name>, interactions, or state:<timestamp|last>.")
@@ -265,7 +323,7 @@ def main() -> int:
     if args.graph_json:
         graph = json.loads(args.graph_json.read_text(encoding="utf-8"))
     else:
-        graph = build_scene_graph(args.data_root, None if args.max_frames == 0 else args.max_frames)
+        graph = build_scene_graph(args.data_root, None if args.max_frames == 0 else args.max_frames, args.detections_json)
         (args.output_dir / "scene_graph.json").write_text(json.dumps(graph, indent=2), encoding="utf-8")
     results = [run_query(graph, query) for query in args.query]
     (args.output_dir / "query_results.json").write_text(json.dumps(results, indent=2), encoding="utf-8")

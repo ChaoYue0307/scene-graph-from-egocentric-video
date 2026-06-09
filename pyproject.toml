@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scene-graph-from-egocentric-video"
+version = "0.1.0"
+description = "Build and query a temporal scene graph from egocentric video annotations."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "h5py",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+ego-scene-graph = "scene_graph_demo:main"
+
+[tool.setuptools]
+py-modules = ["scene_graph_demo"]
+
+[tool.setuptools.package-dir]
+"" = "scripts"

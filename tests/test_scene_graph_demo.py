@@ -5,7 +5,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from scene_graph_demo import frame_records_from_caption, main, norm_object, query_object, relation_type, run_query  # noqa: E402
+from scene_graph_demo import detector_records_by_timestamp, frame_records_from_caption, main, merge_detector_records, norm_object, query_object, relation_type, run_query  # noqa: E402
 
 
 def test_norm_object_merges_aliases() -> None:
@@ -75,3 +75,17 @@ def test_cli_query_existing_graph(tmp_path: Path, monkeypatch) -> None:
     assert main() == 0
     assert (out_dir / "query_results.json").exists()
     assert not (out_dir / "scene_graph.json").exists()
+
+
+def test_detector_records_merge_by_frame_index(tmp_path: Path) -> None:
+    frames = [{"timestamp": "100", "objects": ["kettle"]}, {"timestamp": "200", "objects": []}]
+    detections = tmp_path / "detections.json"
+    detections.write_text(
+        '{"detections":[{"frame_index":1,"objects":[{"label":"mug","track_id":"t1","confidence":0.9,"bbox_xyxy":[1,2,3,4]}]}]}',
+        encoding="utf-8",
+    )
+    by_ts = detector_records_by_timestamp(detections, frames)
+    merged = merge_detector_records(frames, by_ts)
+    assert merged[1]["objects"] == ["mug"]
+    assert merged[1]["object_sources"]["mug"] == ["detector.tracker_json"]
+    assert merged[1]["detector_objects"][0]["track_id"] == "t1"

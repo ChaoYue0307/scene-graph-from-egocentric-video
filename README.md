@@ -16,6 +16,8 @@ The graph connects four kinds of evidence:
 - task segments and action intervals,
 - SLAM camera poses attached to timestamps.
 
+![Scene graph tutorial preview](docs/assets/readme_preview.svg)
+
 ## Interactive Tutorial
 
 Open the visual graph walkthrough:
@@ -79,6 +81,45 @@ python scripts/scene_graph_demo.py \
   --query object:kettle \
   --query interactions \
   --query state:last
+```
+
+After installing the project, the same CLI is available as:
+
+```bash
+pip install -e .
+ego-scene-graph --data-root "$DATA_ROOT" --output-dir outputs/sample_graph
+```
+
+To query an existing graph without raw data:
+
+```bash
+ego-scene-graph \
+  --graph-json outputs/sample_graph/scene_graph.json \
+  --query object:kettle \
+  --query state:last
+```
+
+To merge detector or tracker output, pass a JSON file with timestamped objects:
+
+```bash
+ego-scene-graph \
+  --data-root "$DATA_ROOT" \
+  --detections-json outputs/detections.json
+```
+
+Minimal detection record:
+
+```json
+{
+  "detections": [
+    {
+      "frame_index": 12,
+      "objects": [
+        {"label": "mug", "track_id": "track-7", "confidence": 0.91, "bbox_xyxy": [120, 80, 240, 260]}
+      ]
+    }
+  ]
+}
 ```
 
 ## Outputs
