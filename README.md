@@ -18,9 +18,8 @@ Open the visual graph walkthrough:
 - Web page: https://chaoyue0307.github.io/scene-graph-from-egocentric-video/
 - Local copy: open `docs/index.html` in a browser.
 
-The page explains scene graph terms, shows a query timeline for the kettle, and
-lets you switch between object memory, interaction memory, and task state.
-Detailed terminology lives in `docs/concepts.md`.
+The page includes a graph visual, query switcher, timeline examples, and schema
+checklist. Detailed terminology lives in `docs/concepts.md`.
 
 ## What You Will Learn
 
@@ -41,6 +40,16 @@ export DATA_ROOT=/path/to/xperience-10m-sample
 ```
 
 See `DATA_NOTICE.md` for the minimal data contract.
+
+## Repository Map
+
+| Path | Purpose |
+| --- | --- |
+| `scripts/scene_graph_demo.py` | graph export and query entry point |
+| `docs/index.html` | interactive scene graph tutorial webpage |
+| `docs/concepts.md` | glossary for scene graph and world-memory terms |
+| `outputs/sample_graph/scene_graph.json` | sample temporal graph |
+| `outputs/sample_graph/query_results.json` | sample object, interaction, and state queries |
 
 ## Build The Scene Graph
 

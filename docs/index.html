@@ -7,11 +7,19 @@
   <style>
     :root { color-scheme: light dark; --bg:#111827; --panel:#172033; --text:#edf2fb; --muted:#aab6ca; --line:#30405f; --a:#22d3ee; --b:#c084fc; --c:#fbbf24; --good:#34d399; }
     body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:radial-gradient(circle at 20% 0%, #164e63, transparent 32%), linear-gradient(145deg,#111827,#0f172a); color:var(--text); }
+    a { color:inherit; text-decoration:none; }
+    .topbar { position:sticky; top:0; z-index:5; backdrop-filter:blur(18px); background:rgba(17,24,39,.72); border-bottom:1px solid rgba(148,163,184,.16); }
+    .topbar-inner { max-width:1160px; margin:auto; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:12px 20px; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:10px; }
+    .nav-links a, .hero-actions a { border:1px solid var(--line); border-radius:999px; padding:8px 12px; color:var(--muted); font-size:.9rem; }
+    .nav-links a:hover, .hero-actions a:hover { border-color:var(--a); color:var(--text); }
     main { max-width:1160px; margin:auto; padding:40px 20px 70px; }
     h1 { font-size:clamp(2.1rem,6vw,4.6rem); line-height:.98; letter-spacing:-.06em; margin:0 0 18px; }
     h2 { margin-top:0; letter-spacing:-.03em; }
     p, li { color:var(--muted); line-height:1.65; }
     .card { background:color-mix(in srgb, var(--panel) 88%, transparent); border:1px solid var(--line); border-radius:24px; padding:24px; box-shadow:0 24px 90px rgba(0,0,0,.22); }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .hero-actions a.primary { background:linear-gradient(135deg,var(--a),var(--b)); border:0; color:#07101e; font-weight:800; }
     .hero { display:grid; grid-template-columns:1.35fr .85fr; gap:20px; margin-bottom:20px; }
     .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
     .stat { background:#0b1220; border:1px solid var(--line); border-radius:18px; padding:16px; }
@@ -24,16 +32,38 @@
     .node strong { color:var(--c); }
     .timeline { display:grid; gap:10px; margin-top:12px; }
     .event { border-left:3px solid var(--a); padding:10px 12px; background:#0b1220; border-radius:0 12px 12px 0; }
+    .graph-wrap { display:grid; grid-template-columns:1.05fr .95fr; gap:20px; margin:20px 0; }
+    .graph-svg { min-height:340px; }
+    .graph-svg svg { width:100%; height:340px; display:block; }
+    .query-chip { display:inline-flex; margin:4px 6px 4px 0; padding:7px 10px; border-radius:999px; background:#0b1220; border:1px solid var(--line); color:var(--muted); font-size:.88rem; }
+    .schema { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:12px; }
+    .schema div { border:1px solid var(--line); border-radius:18px; padding:16px; background:#0b1220; }
+    .schema b { color:var(--good); }
     code { color:#bfdbfe; }
-    @media (max-width:860px){ .hero,.layout,.stats,.node-grid{grid-template-columns:1fr;} }
+    @media (max-width:860px){ .hero,.layout,.stats,.node-grid,.graph-wrap,.schema{grid-template-columns:1fr;} .topbar-inner{align-items:flex-start; flex-direction:column;} }
   </style>
 </head>
 <body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <strong>Scene Graph Memory</strong>
+    <nav class="nav-links">
+      <a href="#graph">Graph</a>
+      <a href="#queries">Queries</a>
+      <a href="#schema">Schema</a>
+      <a href="https://github.com/ChaoYue0307/scene-graph-from-egocentric-video">GitHub</a>
+    </nav>
+  </div>
+</header>
 <main>
   <section class="hero">
     <div class="card">
       <h1>Turn egocentric video into queryable world memory</h1>
       <p>A scene graph converts first-person observations into objects, relations, timestamps, and provenance. That structure lets a system ask what was visible, what the hand touched, and what task state was active.</p>
+      <div class="hero-actions">
+        <a class="primary" href="#graph">Explore the graph</a>
+        <a href="https://github.com/ChaoYue0307/scene-graph-from-egocentric-video/blob/main/docs/concepts.md">Read concepts</a>
+      </div>
     </div>
     <div class="card">
       <h2>Sample Graph</h2>
@@ -45,7 +75,43 @@
     </div>
   </section>
 
-  <section class="layout">
+  <section class="card" id="graph">
+    <h2>Memory Graph At A Glance</h2>
+    <div class="graph-wrap">
+      <div class="graph-svg">
+        <svg viewBox="0 0 620 360" role="img" aria-label="Scene graph visualization with objects and hand relations">
+          <rect x="0" y="0" width="620" height="360" rx="28" fill="#0b1220" stroke="#30405f"/>
+          <g stroke="#30405f" stroke-width="2">
+            <line x1="310" y1="180" x2="148" y2="96"/><line x1="310" y1="180" x2="472" y2="92"/><line x1="310" y1="180" x2="150" y2="270"/><line x1="310" y1="180" x2="478" y2="270"/>
+            <line x1="148" y1="96" x2="472" y2="92"/><line x1="150" y1="270" x2="478" y2="270"/>
+          </g>
+          <g>
+            <circle cx="310" cy="180" r="58" fill="#164e63" stroke="#22d3ee" stroke-width="3"/>
+            <text x="310" y="176" text-anchor="middle" fill="#edf2fb" font-size="18" font-weight="700">hand</text>
+            <text x="310" y="199" text-anchor="middle" fill="#aab6ca" font-size="13">interaction source</text>
+          </g>
+          <g fill="#172033" stroke="#c084fc" stroke-width="3">
+            <circle cx="148" cy="96" r="44"/><circle cx="472" cy="92" r="44"/><circle cx="150" cy="270" r="44"/><circle cx="478" cy="270" r="44"/>
+          </g>
+          <g fill="#edf2fb" font-size="15" text-anchor="middle" font-weight="700">
+            <text x="148" y="101">kettle</text><text x="472" y="97">dripper</text><text x="150" y="275">scale</text><text x="478" y="275">table</text>
+          </g>
+          <g fill="#fbbf24" font-size="13" text-anchor="middle">
+            <text x="222" y="116">grasps</text><text x="395" y="118">pours near</text><text x="224" y="258">visible with</text><text x="396" y="258">placed on</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p>The graph is not a picture of pixels. It is a memory structure: objects become nodes, interactions become edges, and timestamps make the graph temporal.</p>
+        <span class="query-chip">object:kettle</span>
+        <span class="query-chip">interactions</span>
+        <span class="query-chip">state:last</span>
+        <p>These query patterns are intentionally simple so the output is easy to inspect before adding detector or language-model components.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="layout" id="queries">
     <div class="card">
       <h2>Explore A Query</h2>
       <button class="active" data-view="object">Object memory: kettle</button>
@@ -66,6 +132,16 @@
       <div class="node"><strong>Object</strong><p>`kettle`, `scale`, `coffee_dripper`: entities that persist across frames.</p></div>
       <div class="node"><strong>Relation</strong><p>`hand_grasps(kettle)` or `visible_in(kettle, frame)` connects entities.</p></div>
       <div class="node"><strong>Provenance</strong><p>Records whether a fact came from caption objects, interaction text, or action labels.</p></div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:20px" id="schema">
+    <h2>Schema Checklist</h2>
+    <div class="schema">
+      <div><b>Frames</b><p>timestamp, subtask, action, objects, camera pose</p></div>
+      <div><b>Objects</b><p>name, aliases, first seen, last seen, observations</p></div>
+      <div><b>Relations</b><p>type, subject, object, timestamp, confidence</p></div>
+      <div><b>Provenance</b><p>where each graph fact came from</p></div>
     </div>
   </section>
 </main>
