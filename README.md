@@ -44,7 +44,7 @@ Raw videos, `annotation.hdf5`, and `.rrd` files stay outside git. Set
 export DATA_ROOT=/path/to/xperience-10m-sample
 ```
 
-See `DATA_NOTICE.md` for the minimal data contract.
+See `DATA_NOTICE.md`, `DATA_CARD.md`, and `EVALUATION_CARD.md` for the data contract, intended use, graph checks, and limitations.
 
 ## Repository Map
 

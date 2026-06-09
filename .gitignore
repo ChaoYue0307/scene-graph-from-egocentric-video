@@ -8,7 +8,7 @@ outputs/*
 !outputs/sample_graph/scene_graph.json
 !outputs/sample_graph/query_results.json
 !outputs/sample_graph/schema.json
-data/
+/data/
 *.hdf5
 *.mp4
 *.rrd

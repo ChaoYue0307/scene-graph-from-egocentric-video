@@ -77,9 +77,9 @@
     <div class="card">
       <h2>Sample Graph</h2>
       <div class="stats">
-        <div class="stat"><strong>80</strong><span>frames</span></div>
-        <div class="stat"><strong>18</strong><span>canonical objects</span></div>
-        <div class="stat"><strong>155</strong><span>relations</span></div>
+        <div class="stat"><strong id="frameCount">80</strong><span>frames</span></div>
+        <div class="stat"><strong id="objectCount">18</strong><span>canonical objects</span></div>
+        <div class="stat"><strong id="relationCount">155</strong><span>relations</span></div>
       </div>
     </div>
   </section>
@@ -113,9 +113,11 @@
       </div>
       <div>
         <p>The graph is not a picture of pixels. It is a memory structure: objects become nodes, interactions become edges, and timestamps make the graph temporal.</p>
-        <span class="query-chip">object:kettle</span>
-        <span class="query-chip">interactions</span>
-        <span class="query-chip">state:last</span>
+        <div id="topObjectChips">
+          <span class="query-chip">object:kettle</span>
+          <span class="query-chip">interactions</span>
+          <span class="query-chip">state:last</span>
+        </div>
         <p>These query patterns are intentionally simple so the output is easy to inspect before adding detector or language-model components.</p>
       </div>
     </div>
@@ -127,7 +129,7 @@
       <button class="active" data-view="object">Object memory: kettle</button>
       <button data-view="interactions">Hand-object interactions</button>
       <button data-view="state">Current task state</button>
-      <p>Each view mirrors the sample `scene_graph.json` and `query_results.json` artifacts.</p>
+      <p>This panel reads the sample `scene_graph.json` and renders object, interaction, and state views directly in the browser.</p>
     </div>
     <div class="card">
       <h2 id="viewTitle">Object memory: kettle</h2>
@@ -208,6 +210,80 @@ const views = {
     ]
   }
 };
+const graphUrl = "data/scene_graph.json";
+let graphData = null;
+
+function canonicalObject(name) {
+  const clean = name.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  const aliases = {
+    gooseneck_kettle: "kettle",
+    glass_kettle: "kettle",
+    coffee_dripper: "dripper",
+    ceramic_dripper: "dripper",
+    digital_scale: "scale",
+    water_bottle: "bottle",
+    glass_carafe: "carafe"
+  };
+  return aliases[clean] || clean || "unknown_object";
+}
+
+function eventHtml(name, text) {
+  return `<div class="event"><strong>${name}</strong><p>${text}</p></div>`;
+}
+
+function updateStats(graph) {
+  document.getElementById("frameCount").textContent = graph.metadata.num_frames;
+  document.getElementById("objectCount").textContent = graph.metadata.num_objects;
+  document.getElementById("relationCount").textContent = graph.metadata.num_relations;
+  document.getElementById("topObjectChips").innerHTML = graph.metadata.top_objects.slice(0, 5).map(([name, count]) => `<span class="query-chip">${name}: ${count}</span>`).join("");
+}
+
+function renderObjectFromGraph(graph, objectName = "kettle") {
+  const objectId = canonicalObject(objectName);
+  const timeline = graph.frames.filter(frame => (frame.objects || []).map(canonicalObject).includes(objectId));
+  const relations = graph.relations.filter(rel => rel.subject === objectId || rel.object === objectId);
+  document.getElementById("viewTitle").textContent = `Object memory: ${objectId}`;
+  document.getElementById("viewText").textContent = `${objectId} appears in ${timeline.length} sampled frames and participates in ${relations.length} graph relations.`;
+  document.getElementById("viewBody").innerHTML = timeline.slice(0, 7).map(frame =>
+    eventHtml(frame.action || frame.subtask || "Observation", `${frame.timestamp}: ${(frame.objects || []).join(", ") || "no object list"}${frame.interaction_text ? " · " + frame.interaction_text : ""}`)
+  ).join("");
+}
+
+function renderInteractionsFromGraph(graph) {
+  const hits = graph.relations.filter(rel => rel.type.startsWith("hand_"));
+  const counts = hits.reduce((acc, rel) => {
+    acc[rel.object] = (acc[rel.object] || 0) + 1;
+    return acc;
+  }, {});
+  document.getElementById("viewTitle").textContent = "Hand-object interactions";
+  document.getElementById("viewText").textContent = `${hits.length} hand-object relations are available in the sample graph.`;
+  document.getElementById("viewBody").innerHTML = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 7).map(([name, count]) =>
+    eventHtml(name, `${count} interaction relation${count === 1 ? "" : "s"}`)
+  ).join("");
+}
+
+function renderStateFromGraph(graph) {
+  const frame = graph.frames[graph.frames.length - 1];
+  const active = graph.relations.filter(rel => rel.timestamp === frame.timestamp && ["action_active", "hand_grasps", "hand_contacts", "hand_pours_with", "hand_interacts_with"].includes(rel.type));
+  document.getElementById("viewTitle").textContent = "Current task state";
+  document.getElementById("viewText").textContent = `Latest sampled frame: ${frame.timestamp}`;
+  document.getElementById("viewBody").innerHTML = [
+    eventHtml("Subtask", frame.subtask || "unknown"),
+    eventHtml("Action", frame.action || "unknown"),
+    eventHtml("Visible objects", (frame.objects || []).map(canonicalObject).join(", ") || "none"),
+    eventHtml("Active relations", active.map(rel => `${rel.type}(${rel.object})`).join(", ") || "none")
+  ].join("");
+}
+
+function renderGraphView(viewName) {
+  if (!graphData) {
+    render(viewName);
+    return;
+  }
+  if (viewName === "object") renderObjectFromGraph(graphData);
+  if (viewName === "interactions") renderInteractionsFromGraph(graphData);
+  if (viewName === "state") renderStateFromGraph(graphData);
+}
 const concepts = {
   graph: {
     title: "Scene graph",
@@ -245,7 +321,7 @@ document.querySelectorAll("button[data-view]").forEach(button => {
   button.addEventListener("click", () => {
     document.querySelectorAll("button[data-view]").forEach(x => x.classList.remove("active"));
     button.classList.add("active");
-    render(button.dataset.view);
+    renderGraphView(button.dataset.view);
   });
 });
 document.querySelectorAll("button[data-concept]").forEach(button => {
@@ -258,7 +334,14 @@ document.querySelectorAll("button[data-concept]").forEach(button => {
     document.getElementById("conceptVisual").innerHTML = concept.svg;
   });
 });
-render("object");
+fetch(graphUrl)
+  .then(response => response.json())
+  .then(graph => {
+    graphData = graph;
+    updateStats(graphData);
+    renderGraphView("object");
+  })
+  .catch(() => render("object"));
 document.getElementById("conceptVisual").innerHTML = concepts.graph.svg;
 </script>
 </body>

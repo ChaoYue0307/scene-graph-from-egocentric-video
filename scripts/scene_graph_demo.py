@@ -7,9 +7,6 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-import h5py
-import numpy as np
-
 
 SCHEMA = {
     "type": "object",
@@ -36,6 +33,8 @@ OBJECT_ALIASES = {
 
 
 def load_caption(annotation: Path) -> dict:
+    import h5py
+
     with h5py.File(annotation, "r") as h5:
         raw = h5["caption"][()]
     if isinstance(raw, bytes):
@@ -44,6 +43,9 @@ def load_caption(annotation: Path) -> dict:
 
 
 def load_slam_pose_preview(annotation: Path) -> dict[str, dict]:
+    import h5py
+    import numpy as np
+
     with h5py.File(annotation, "r") as h5:
         names = [np.asarray(x).tobytes().decode("utf-8", errors="replace").strip("\x00") for x in h5["slam/frame_names"]]
         trans = np.asarray(h5["slam/trans_xyz"], dtype=float)
@@ -250,6 +252,7 @@ def parse_args() -> argparse.Namespace:
     root_default = Path(__file__).resolve().parents[2] / "data/sample/xperience-10m-sample"
     parser = argparse.ArgumentParser(description="Export and query a temporal scene graph from an egocentric Xperience sample.")
     parser.add_argument("--data-root", type=Path, default=root_default)
+    parser.add_argument("--graph-json", type=Path, help="Query an existing scene_graph.json without requiring raw data.")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/sample_graph"))
     parser.add_argument("--max-frames", type=int, default=80)
     parser.add_argument("--query", action="append", default=["object:kettle", "interactions", "state:last"], help="Query: object:<name>, interactions, or state:<timestamp|last>.")
@@ -259,9 +262,12 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    graph = build_scene_graph(args.data_root, None if args.max_frames == 0 else args.max_frames)
+    if args.graph_json:
+        graph = json.loads(args.graph_json.read_text(encoding="utf-8"))
+    else:
+        graph = build_scene_graph(args.data_root, None if args.max_frames == 0 else args.max_frames)
+        (args.output_dir / "scene_graph.json").write_text(json.dumps(graph, indent=2), encoding="utf-8")
     results = [run_query(graph, query) for query in args.query]
-    (args.output_dir / "scene_graph.json").write_text(json.dumps(graph, indent=2), encoding="utf-8")
     (args.output_dir / "query_results.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
     (args.output_dir / "schema.json").write_text(json.dumps(SCHEMA, indent=2), encoding="utf-8")
     print(f"frames={graph['metadata']['num_frames']} objects={graph['metadata']['num_objects']} relations={graph['metadata']['num_relations']}")

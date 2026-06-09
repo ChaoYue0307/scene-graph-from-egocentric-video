@@ -5,7 +5,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from scene_graph_demo import frame_records_from_caption, norm_object, query_object, relation_type, run_query  # noqa: E402
+from scene_graph_demo import frame_records_from_caption, main, norm_object, query_object, relation_type, run_query  # noqa: E402
 
 
 def test_norm_object_merges_aliases() -> None:
@@ -56,3 +56,22 @@ def test_run_query_rejects_unknown_query() -> None:
         assert "Unknown query" in str(exc)
     else:
         raise AssertionError("Expected ValueError")
+
+
+def test_cli_query_existing_graph(tmp_path: Path, monkeypatch) -> None:
+    graph_path = tmp_path / "scene_graph.json"
+    graph_path.write_text(
+        '{"metadata":{"num_frames":1,"num_objects":1,"num_relations":1},'
+        '"objects":{"kettle":{"name":"kettle"}},'
+        '"frames":[{"timestamp":"10","objects":["kettle"],"subtask":"demo","action":"move"}],'
+        '"relations":[{"type":"visible_in","subject":"kettle","object":"frame:0","timestamp":"10"}]}',
+        encoding="utf-8",
+    )
+    out_dir = tmp_path / "out"
+    monkeypatch.setattr(
+        "sys.argv",
+        ["scene_graph_demo.py", "--graph-json", str(graph_path), "--output-dir", str(out_dir), "--query", "object:kettle"],
+    )
+    assert main() == 0
+    assert (out_dir / "query_results.json").exists()
+    assert not (out_dir / "scene_graph.json").exists()
