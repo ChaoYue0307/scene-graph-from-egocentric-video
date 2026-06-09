@@ -15,11 +15,8 @@ The graph connects four kinds of evidence:
 
 Open the visual graph walkthrough:
 
-```bash
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000/docs/`.
+- Web page: https://chaoyue0307.github.io/scene-graph-from-egocentric-video/
+- Local copy: open `docs/index.html` in a browser.
 
 The page explains scene graph terms, shows a query timeline for the kettle, and
 lets you switch between object memory, interaction memory, and task state.
