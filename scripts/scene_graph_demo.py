@@ -51,7 +51,7 @@ def load_slam_pose_preview(annotation: Path) -> dict[str, dict]:
         trans = np.asarray(h5["slam/trans_xyz"], dtype=float)
         quat = np.asarray(h5["slam/quat_wxyz"], dtype=float)
     poses = {}
-    for name, t, q in zip(names, trans, quat):
+    for name, t, q in zip(names, trans, quat, strict=True):
         stem = name.rsplit(".", 1)[0]
         poses[stem] = {
             "position_xyz": [round(float(x), 6) for x in t],

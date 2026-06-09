@@ -53,6 +53,9 @@ See `DATA_NOTICE.md`, `DATA_CARD.md`, and `EVALUATION_CARD.md` for the data cont
 | Path | Purpose |
 | --- | --- |
 | `scripts/scene_graph_demo.py` | graph export and query entry point |
+| `scripts/adapters.py` | source boundary for caption and detector inputs |
+| `notebooks/03_scene_graph_queries.ipynb` | step-by-step notebook companion |
+| `reports/scene_graph_memory_report.md` | paper-style method, artifact, and limitation summary |
 | `docs/index.html` | interactive scene graph tutorial webpage |
 | `docs/concepts.md` | glossary for scene graph and world-memory terms |
 | `outputs/sample_graph/scene_graph.json` | sample temporal graph |

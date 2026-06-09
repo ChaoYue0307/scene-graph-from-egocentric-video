@@ -5,6 +5,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from adapters import XperienceSceneGraphAdapter  # noqa: E402
 from scene_graph_demo import detector_records_by_timestamp, frame_records_from_caption, main, merge_detector_records, norm_object, query_object, relation_type, run_query  # noqa: E402
 
 
@@ -89,3 +90,11 @@ def test_detector_records_merge_by_frame_index(tmp_path: Path) -> None:
     assert merged[1]["objects"] == ["mug"]
     assert merged[1]["object_sources"]["mug"] == ["detector.tracker_json"]
     assert merged[1]["detector_objects"][0]["track_id"] == "t1"
+
+
+def test_xperience_scene_graph_adapter_paths(tmp_path: Path) -> None:
+    detections = tmp_path / "detections.json"
+    adapter = XperienceSceneGraphAdapter(tmp_path, detections)
+    assert adapter.annotation_path == tmp_path / "annotation.hdf5"
+    assert adapter.describe()["detections_path"] == str(detections)
+    assert "optional_detector_tracks" in adapter.describe()["signals"]
