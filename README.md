@@ -18,8 +18,8 @@ Open the visual graph walkthrough:
 - Web page: https://chaoyue0307.github.io/scene-graph-from-egocentric-video/
 - Local copy: open `docs/index.html` in a browser.
 
-The page includes a graph visual, query switcher, timeline examples, and schema
-checklist. Detailed terminology lives in `docs/concepts.md`.
+The page includes a graph visual, query switcher, timeline examples, direct
+concept explanations, and schema checklist.
 
 ## What You Will Learn
 
