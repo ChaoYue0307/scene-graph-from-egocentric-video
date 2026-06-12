@@ -6,7 +6,8 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from adapters import XperienceSceneGraphAdapter  # noqa: E402
-from scene_graph_demo import compare_graphs, detector_records_by_timestamp, frame_records_from_caption, main, merge_detector_records, norm_object, query_object, relation_type, run_query  # noqa: E402
+from evaluate_graph_qa import evaluate  # noqa: E402
+from scene_graph_demo import compare_graphs, detector_records_by_timestamp, frame_records_from_caption, main, merge_detector_records, norm_object, query_object, query_where, relation_type, run_query  # noqa: E402
 
 
 def test_norm_object_merges_aliases() -> None:
@@ -57,6 +58,67 @@ def test_run_query_rejects_unknown_query() -> None:
         assert "Unknown query" in str(exc)
     else:
         raise AssertionError("Expected ValueError")
+
+
+def _memory_graph() -> dict:
+    return {
+        "objects": {
+            "kettle": {
+                "name": "kettle",
+                "first_seen": "10",
+                "last_seen": "30",
+                "last_seen_camera_xyz": [0.1, 0.2, 0.3],
+                "camera_trail": [
+                    {"timestamp": "10", "camera_xyz": [0.0, 0.0, 0.0]},
+                    {"timestamp": "30", "camera_xyz": [0.1, 0.2, 0.3]},
+                ],
+            },
+            "scale": {"name": "scale", "first_seen": "20", "last_seen": "20"},
+        },
+        "frames": [
+            {"timestamp": "10", "objects": ["kettle"], "subtask": "pick", "action": "Pick up kettle"},
+            {"timestamp": "30", "objects": ["kettle", "scale"], "subtask": "pour", "action": ""},
+        ],
+        "relations": [
+            {"type": "hand_grasps", "subject": "hand", "object": "kettle", "timestamp": "10"},
+            {"type": "visible_in", "subject": "scale", "object": "frame:1", "timestamp": "30"},
+        ],
+    }
+
+
+def test_query_where_returns_egocentric_position_memory() -> None:
+    result = query_where(_memory_graph(), "gooseneck kettle")
+    assert result["found"] is True
+    assert result["last_seen_camera_xyz"] == [0.1, 0.2, 0.3]
+    assert result["sightings_with_pose"] == 2
+    missing = query_where(_memory_graph(), "microwave")
+    assert missing["found"] is False
+
+
+def test_qa_evaluate_scores_all_question_types() -> None:
+    graph = _memory_graph()
+    questions = [
+        {"type": "object_in_memory", "object": "digital scale", "answer": True},
+        {"type": "object_in_memory", "object": "laptop", "answer": False},
+        {"type": "object_visible_at", "object": "kettle", "timestamp": "10", "answer": True},
+        {"type": "interaction_occurs", "object": "kettle", "relation": "hand_grasps", "answer": True},
+        {"type": "interaction_occurs", "object": "scale", "answer": False},
+        {"type": "subtask_at", "timestamp": "10", "answer": "pick"},
+        {"type": "action_at", "timestamp": "30", "answer": ""},
+        {"type": "first_seen_before", "object_a": "kettle", "object_b": "scale", "answer": True},
+        {"type": "last_seen_near", "object": "kettle", "camera_xyz": [0.1, 0.2, 0.3], "tolerance": 0.05, "answer": True},
+        {"type": "last_seen_near", "object": "scale", "camera_xyz": [0.0, 0.0, 0.0], "answer": False},
+    ]
+    report = evaluate(graph, questions)
+    assert report["num_questions"] == 10
+    assert report["accuracy"] == 1.0
+    assert report["per_type"]["object_in_memory"]["correct"] == 2
+
+
+def test_qa_evaluate_detects_wrong_answers() -> None:
+    report = evaluate(_memory_graph(), [{"type": "object_in_memory", "object": "kettle", "answer": False}])
+    assert report["accuracy"] == 0.0
+    assert report["results"][0]["predicted"] is True
 
 
 def test_cli_query_existing_graph(tmp_path: Path, monkeypatch) -> None:

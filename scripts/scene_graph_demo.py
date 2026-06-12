@@ -188,6 +188,7 @@ def build_scene_graph(data_root: Path, max_frames: int | None, detections_json: 
     for frame_idx, frame in enumerate(frames):
         ts = frame["timestamp"]
         frame["camera_pose"] = poses.get(ts)
+        pose = frame["camera_pose"]
         detector_by_id = {norm_object(row["name"]): row for row in frame.get("detector_objects", [])}
         seen_frame_objects = set()
         for obj_name in frame["objects"]:
@@ -211,6 +212,9 @@ def build_scene_graph(data_root: Path, max_frames: int | None, detections_json: 
             record["last_seen"] = ts
             record["observations"] += 1
             record["aliases"] = sorted(set(record["aliases"]) | {obj_name})
+            if pose:
+                record.setdefault("camera_trail", []).append({"timestamp": ts, "camera_xyz": pose["position_xyz"]})
+                record["last_seen_camera_xyz"] = pose["position_xyz"]
             if detector_hit and detector_hit.get("track_id") is not None:
                 record["track_ids"] = sorted(set(record.get("track_ids", [])) | {str(detector_hit["track_id"])})
             relations.append({
@@ -264,6 +268,7 @@ def build_scene_graph(data_root: Path, max_frames: int | None, detections_json: 
             "objects": "Caption object annotations in annotation.hdf5.",
             "relations": "Rule-based extraction from object lists, interaction text, and action intervals.",
             "camera_pose": "SLAM trans_xyz and quat_wxyz matched by timestamp when present.",
+            "camera_trail": "Wearer camera position at each sighting; an egocentric proxy for object location, not a triangulated object position.",
             "detector_hook": "Optional --detections-json merges detector/tracker object records with caption objects.",
         },
     }
@@ -295,6 +300,25 @@ def query_state(graph: dict, timestamp: str) -> dict:
     return {"query": f"state:{timestamp}", "timestamp": frame["timestamp"], "subtask": frame.get("subtask"), "action": frame.get("action"), "visible_objects": visible, "active_relations": active}
 
 
+def query_where(graph: dict, object_id: str) -> dict:
+    oid = norm_object(object_id)
+    record = graph["objects"].get(oid)
+    if record is None:
+        return {"query": f"where:{object_id}", "object_id": oid, "found": False, "answer": f"No memory of {object_id}."}
+    trail = record.get("camera_trail", [])
+    return {
+        "query": f"where:{object_id}",
+        "object_id": oid,
+        "found": True,
+        "first_seen": record.get("first_seen"),
+        "last_seen": record.get("last_seen"),
+        "last_seen_camera_xyz": record.get("last_seen_camera_xyz"),
+        "sightings_with_pose": len(trail),
+        "camera_trail": trail,
+        "note": "Positions are wearer camera positions at sighting time: an egocentric proxy for where the object was, not a triangulated object position.",
+    }
+
+
 def run_query(graph: dict, query: str) -> dict:
     if query.startswith("object:"):
         return query_object(graph, query.split(":", 1)[1])
@@ -302,6 +326,8 @@ def run_query(graph: dict, query: str) -> dict:
         return query_interactions(graph)
     if query.startswith("state:"):
         return query_state(graph, query.split(":", 1)[1])
+    if query.startswith("where:"):
+        return query_where(graph, query.split(":", 1)[1])
     raise ValueError(f"Unknown query: {query}")
 
 
@@ -332,8 +358,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--detections-json", type=Path, help="Optional detector/tracker JSON with timestamped objects to merge into the graph.")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/sample_graph"))
     parser.add_argument("--max-frames", type=int, default=80)
-    parser.add_argument("--query", action="append", default=["object:kettle", "interactions", "state:last"], help="Query: object:<name>, interactions, or state:<timestamp|last>.")
-    return parser.parse_args()
+    parser.add_argument("--query", action="append", default=None, help="Query: object:<name>, interactions, state:<timestamp|last>, or where:<name>. Repeatable; defaults to a small showcase set.")
+    args = parser.parse_args()
+    if args.query is None:
+        args.query = ["object:kettle", "interactions", "state:last", "where:kettle"]
+    return args
 
 
 def main() -> int:

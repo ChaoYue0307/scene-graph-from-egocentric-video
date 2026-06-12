@@ -1,0 +1,339 @@
+{
+  "num_questions": 33,
+  "num_correct": 33,
+  "accuracy": 1.0,
+  "per_type": {
+    "action_at": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    },
+    "first_seen_before": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "interaction_occurs": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "last_seen_near": {
+      "correct": 3,
+      "total": 3,
+      "accuracy": 1.0
+    },
+    "object_in_memory": {
+      "correct": 7,
+      "total": 7,
+      "accuracy": 1.0
+    },
+    "object_visible_at": {
+      "correct": 5,
+      "total": 5,
+      "accuracy": 1.0
+    },
+    "subtask_at": {
+      "correct": 4,
+      "total": 4,
+      "accuracy": 1.0
+    }
+  },
+  "results": [
+    {
+      "type": "object_in_memory",
+      "object": "kettle",
+      "answer": true,
+      "text": "Does the memory contain a kettle?",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_in_memory",
+      "object": "gooseneck kettle",
+      "answer": true,
+      "text": "Alias check: gooseneck kettle should resolve to kettle.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_in_memory",
+      "object": "digital scale",
+      "answer": true,
+      "text": "Alias check: digital scale should resolve to scale.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_in_memory",
+      "object": "glass carafe",
+      "answer": true,
+      "text": "Alias check: glass carafe should resolve to carafe.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_in_memory",
+      "object": "dripper",
+      "answer": true,
+      "text": "Does the memory contain a dripper?",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_in_memory",
+      "object": "microwave",
+      "answer": false,
+      "text": "Negative: no microwave appears in this episode.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "object_in_memory",
+      "object": "laptop",
+      "answer": false,
+      "text": "Negative: no laptop appears in this episode.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "object_visible_at",
+      "object": "kettle",
+      "timestamp": "72857807732824",
+      "answer": true,
+      "text": "Kettle is in the first annotated frame.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_visible_at",
+      "object": "bottle",
+      "timestamp": "72857807732824",
+      "answer": true,
+      "text": "Bottle is in the first annotated frame.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_visible_at",
+      "object": "coffee scoop",
+      "timestamp": "72937804785487",
+      "answer": true,
+      "text": "Scoop is visible while transferring grounds.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "object_visible_at",
+      "object": "kettle",
+      "timestamp": "72859805540867",
+      "answer": false,
+      "text": "Frame has no object annotations; visibility must not be invented.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "object_visible_at",
+      "object": "carafe",
+      "timestamp": "72937804785487",
+      "answer": false,
+      "text": "Carafe is not annotated during the grounds transfer.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "kettle",
+      "relation": "hand_grasps",
+      "answer": true,
+      "text": "The hand grasps the kettle.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "kettle",
+      "answer": true,
+      "text": "Any hand interaction with the kettle.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "carafe",
+      "relation": "hand_grasps",
+      "answer": true,
+      "text": "The hand grasps the carafe.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "lid",
+      "relation": "hand_grasps",
+      "answer": true,
+      "text": "The hand grasps the lid.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "dripper",
+      "relation": "hand_contacts",
+      "answer": true,
+      "text": "The hand contacts the dripper.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "scale",
+      "relation": "hand_grasps",
+      "answer": false,
+      "text": "The scale is interacted with but never grasped.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "interaction_occurs",
+      "object": "bottle",
+      "answer": false,
+      "text": "The bottle is visible but never hand-interacted in these frames.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "subtask_at",
+      "timestamp": "72857807732824",
+      "answer": "Pick up and position kettle",
+      "text": "Subtask at the first frame.",
+      "predicted": "Pick up and position kettle",
+      "correct": true
+    },
+    {
+      "type": "subtask_at",
+      "timestamp": "72937804785487",
+      "answer": "Transfer coffee grounds to dripper",
+      "text": "Subtask during grounds transfer.",
+      "predicted": "Transfer coffee grounds to dripper",
+      "correct": true
+    },
+    {
+      "type": "subtask_at",
+      "timestamp": "72907804785931",
+      "answer": "Prepare coffee equipment and scoop grounds",
+      "text": "Subtask while preparing equipment.",
+      "predicted": "Prepare coffee equipment and scoop grounds",
+      "correct": true
+    },
+    {
+      "type": "subtask_at",
+      "timestamp": "73015804783899",
+      "answer": "Handle gooseneck kettle",
+      "text": "Subtask at the last frame.",
+      "predicted": "Handle gooseneck kettle",
+      "correct": true
+    },
+    {
+      "type": "action_at",
+      "timestamp": "72857807732824",
+      "answer": "Pick up kettle",
+      "text": "Action at the first frame.",
+      "predicted": "Pick up kettle",
+      "correct": true
+    },
+    {
+      "type": "action_at",
+      "timestamp": "72937804785487",
+      "answer": "Transfer coffee to dripper",
+      "text": "Action during grounds transfer.",
+      "predicted": "Transfer coffee to dripper",
+      "correct": true
+    },
+    {
+      "type": "action_at",
+      "timestamp": "72907804785931",
+      "answer": "Hold coffee carafe",
+      "text": "Action while holding the carafe.",
+      "predicted": "Hold coffee carafe",
+      "correct": true
+    },
+    {
+      "type": "action_at",
+      "timestamp": "73015804783899",
+      "answer": "",
+      "text": "No labeled action interval covers the last frame.",
+      "predicted": "",
+      "correct": true
+    },
+    {
+      "type": "first_seen_before",
+      "object_a": "kettle",
+      "object_b": "coffee scoop",
+      "answer": true,
+      "text": "The kettle appears before the scoop.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "first_seen_before",
+      "object_a": "carafe",
+      "object_b": "kettle",
+      "answer": false,
+      "text": "The carafe appears after the kettle.",
+      "predicted": false,
+      "correct": true
+    },
+    {
+      "type": "first_seen_before",
+      "object_a": "bottle",
+      "object_b": "carafe",
+      "answer": true,
+      "text": "The bottle appears before the carafe.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "last_seen_near",
+      "object": "kettle",
+      "camera_xyz": [
+        -0.102904,
+        -0.046399,
+        0.088219
+      ],
+      "tolerance": 0.05,
+      "answer": true,
+      "text": "Wearer position at the kettle's last sighting.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "last_seen_near",
+      "object": "coffee scoop",
+      "camera_xyz": [
+        -0.178862,
+        -0.02217,
+        -0.014863
+      ],
+      "tolerance": 0.05,
+      "answer": true,
+      "text": "Wearer position at the scoop's last sighting.",
+      "predicted": true,
+      "correct": true
+    },
+    {
+      "type": "last_seen_near",
+      "object": "bottle",
+      "camera_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tolerance": 0.05,
+      "answer": false,
+      "text": "Negative: the bottle was last seen far from the origin.",
+      "predicted": false,
+      "correct": true
+    }
+  ]
+}

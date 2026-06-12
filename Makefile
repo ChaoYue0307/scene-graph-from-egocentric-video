@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: test help visuals detector-fixture visual-detections pages
+.PHONY: test help visuals detector-fixture visual-detections qa-eval pages
 
 test:
 	$(PYTHON) -m pytest -q
@@ -16,6 +16,9 @@ detector-fixture:
 
 visual-detections:
 	$(PYTHON) scripts/generate_visual_detections.py
+
+qa-eval:
+	$(PYTHON) scripts/evaluate_graph_qa.py
 
 pages:
 	@echo "https://chaoyue0307.github.io/scene-graph-from-egocentric-video/"

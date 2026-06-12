@@ -67,3 +67,22 @@ replace or merge those object sources while keeping the same graph schema:
 ```text
 video frame -> detector/segmenter -> objects/masks -> scene graph -> queries
 ```
+
+## Spatial Memory (Egocentric Proxy)
+
+Attaching the wearer's SLAM camera position to each object sighting turns the
+scene graph into a spatial memory: `where:<object>` answers with the camera
+position at the last sighting. This is a proxy — where the *wearer* was, not
+where the object is. For tabletop manipulation the two nearly coincide; for
+far-field observations they do not. Provenance labels the proxy explicitly so
+downstream users cannot mistake it for triangulated geometry.
+
+## Graph QA Evaluation
+
+A scene graph is only as useful as the questions it answers correctly.
+`eval/qa_pairs.json` holds human-labeled questions with gold answers — object
+memory, alias resolution, visibility at a timestamp, interactions, task state,
+temporal order, and spatial proximity. Negative questions (absent objects,
+wrong relations) prevent a yes-saying graph from scoring well. With
+caption-grounded construction the score is a regression check; with detector
+sources it becomes a perception benchmark against the same gold answers.

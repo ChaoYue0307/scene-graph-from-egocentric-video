@@ -22,7 +22,7 @@ dev = ["pytest", "ruff"]
 ego-scene-graph = "scene_graph_demo:main"
 
 [tool.setuptools]
-py-modules = ["adapters", "scene_graph_demo"]
+py-modules = ["adapters", "scene_graph_demo", "evaluate_graph_qa"]
 
 [tool.setuptools.package-dir]
 "" = "scripts"

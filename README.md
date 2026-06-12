@@ -39,7 +39,9 @@ concept explanations, and schema checklist.
 - **Temporal relation:** a relation attached to a timestamp or segment.
 - **Hand-object interaction:** a relation such as `hand_grasps(kettle)`.
 - **World state query:** a question like "what objects are visible now?"
+- **Spatial memory:** answering "where did I last see the kettle?" from SLAM poses.
 - **Provenance:** metadata that records where each graph fact came from.
+- **Graph evaluation:** scoring the exported graph against human-labeled QA pairs.
 
 ## Data
 
@@ -57,6 +59,8 @@ See `DATA_NOTICE.md`, `DATA_CARD.md`, and `EVALUATION_CARD.md` for the data cont
 | Path | Purpose |
 | --- | --- |
 | `scripts/scene_graph_demo.py` | graph export and query entry point |
+| `scripts/evaluate_graph_qa.py` | QA accuracy scoring against human-labeled pairs |
+| `eval/qa_pairs.json` | 33 human-labeled questions with gold answers |
 | `scripts/adapters.py` | source boundary for caption and detector inputs |
 | `notebooks/03_scene_graph_queries.ipynb` | step-by-step notebook companion |
 | `reports/scene_graph_memory_report.md` | paper-style method, artifact, and limitation summary |
@@ -147,7 +151,8 @@ Minimal detection record:
 
 | Output | What To Inspect |
 | --- | --- |
-| `scene_graph.json` | frames, objects, relations, task segments, provenance, and confidence |
+| `scene_graph.json` | frames, objects, relations, task segments, provenance, confidence, and per-object camera trails |
+| `qa_results.json` | QA accuracy report with per-question-type breakdown |
 | `schema.json` | the graph contract shared by exporters and query tools |
 | `query_results.json` | example answers for object timelines, interactions, and state |
 | `graph_comparison.json` | caption-only versus detector-merged graph comparison when requested |
@@ -167,7 +172,38 @@ Minimal detection record:
 python scripts/scene_graph_demo.py --data-root "$DATA_ROOT" --query object:kettle
 python scripts/scene_graph_demo.py --data-root "$DATA_ROOT" --query interactions
 python scripts/scene_graph_demo.py --data-root "$DATA_ROOT" --query state:last
+python scripts/scene_graph_demo.py --data-root "$DATA_ROOT" --query where:kettle
 ```
+
+## Spatial Memory: "Where Did I Last See The Kettle?"
+
+Each object observation with a SLAM pose adds the wearer's camera position to
+that object's `camera_trail`, and `where:<object>` answers with the position at
+the last sighting. This is an egocentric proxy — the wearer's location when the
+object was visible, not a triangulated object position — but for tabletop
+manipulation the wearer stands within arm's reach of what they see, so the
+proxy is useful for navigation-style queries and is honest about its
+provenance. Triangulating true object positions from bounding boxes plus poses
+is the natural next exercise.
+
+## QA Evaluation
+
+The graph is scored against 33 human-labeled QA pairs covering object memory,
+alias resolution, visibility, interactions, task state, temporal order, and the
+spatial proxy:
+
+```bash
+make qa-eval
+# qa accuracy: 33/33 = 1.000
+```
+
+Gold answers in `eval/qa_pairs.json` were written by reading the episode
+annotations directly, so this measures whether graph construction and query
+logic preserve what a human can check — a regression benchmark for the builder,
+not a perception benchmark. Negative questions (absent objects, wrong
+relations, far-away positions) keep it from rewarding a graph that says yes to
+everything. When a detector replaces caption objects as the source, the same
+QA set becomes a real perception score.
 
 This graph is rule-based and transparent. That makes it easy to inspect before
 adding detector, segmenter, or language-model components.

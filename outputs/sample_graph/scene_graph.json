@@ -2212,7 +2212,70 @@
       "first_seen": "72857807732824",
       "last_seen": "72997806959599",
       "observations": 7,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72857807732824",
+          "camera_xyz": [
+            -0.124226,
+            -0.071547,
+            0.167756
+          ]
+        },
+        {
+          "timestamp": "72907804785931",
+          "camera_xyz": [
+            -0.335959,
+            0.023896,
+            -0.079124
+          ]
+        },
+        {
+          "timestamp": "72957804786497",
+          "camera_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ]
+        },
+        {
+          "timestamp": "72975806764297",
+          "camera_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ]
+        },
+        {
+          "timestamp": "72977804786464",
+          "camera_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ]
+        },
+        {
+          "timestamp": "72995804785348",
+          "camera_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ]
+        },
+        {
+          "timestamp": "72997806959599",
+          "camera_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.061283,
+        -0.067138,
+        0.277602
+      ]
     },
     "dripper": {
       "name": "coffee dripper",
@@ -2223,7 +2286,174 @@
       "first_seen": "72857807732824",
       "last_seen": "73007804786395",
       "observations": 20,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72857807732824",
+          "camera_xyz": [
+            -0.124226,
+            -0.071547,
+            0.167756
+          ]
+        },
+        {
+          "timestamp": "72875807554333",
+          "camera_xyz": [
+            -0.084954,
+            -0.102707,
+            0.219571
+          ]
+        },
+        {
+          "timestamp": "72877805630083",
+          "camera_xyz": [
+            -0.359029,
+            -0.012748,
+            -0.045208
+          ]
+        },
+        {
+          "timestamp": "72883804786336",
+          "camera_xyz": [
+            -0.127773,
+            -0.10324,
+            0.246546
+          ]
+        },
+        {
+          "timestamp": "72895806166842",
+          "camera_xyz": [
+            -0.113114,
+            -0.042768,
+            0.06208
+          ]
+        },
+        {
+          "timestamp": "72897804785676",
+          "camera_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ]
+        },
+        {
+          "timestamp": "72905804784472",
+          "camera_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ]
+        },
+        {
+          "timestamp": "72907804785931",
+          "camera_xyz": [
+            -0.335959,
+            0.023896,
+            -0.079124
+          ]
+        },
+        {
+          "timestamp": "72927804785149",
+          "camera_xyz": [
+            -0.062477,
+            -0.065411,
+            0.140591
+          ]
+        },
+        {
+          "timestamp": "72937804785487",
+          "camera_xyz": [
+            -0.122526,
+            -0.035748,
+            0.015266
+          ]
+        },
+        {
+          "timestamp": "72945804784533",
+          "camera_xyz": [
+            -0.133862,
+            -0.017057,
+            -0.049832
+          ]
+        },
+        {
+          "timestamp": "72947804785867",
+          "camera_xyz": [
+            -0.178862,
+            -0.02217,
+            -0.014863
+          ]
+        },
+        {
+          "timestamp": "72955804786829",
+          "camera_xyz": [
+            -0.214065,
+            -0.02753,
+            -0.049291
+          ]
+        },
+        {
+          "timestamp": "72957804786497",
+          "camera_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ]
+        },
+        {
+          "timestamp": "72975806764297",
+          "camera_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ]
+        },
+        {
+          "timestamp": "72977804786464",
+          "camera_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ]
+        },
+        {
+          "timestamp": "72995804785348",
+          "camera_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ]
+        },
+        {
+          "timestamp": "72997806959599",
+          "camera_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ]
+        },
+        {
+          "timestamp": "73005806914853",
+          "camera_xyz": [
+            -0.117765,
+            -0.043999,
+            0.099215
+          ]
+        },
+        {
+          "timestamp": "73007804786395",
+          "camera_xyz": [
+            -0.102904,
+            -0.046399,
+            0.088219
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.102904,
+        -0.046399,
+        0.088219
+      ]
     },
     "kettle": {
       "name": "kettle",
@@ -2234,7 +2464,134 @@
       "first_seen": "72857807732824",
       "last_seen": "73007804786395",
       "observations": 15,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72857807732824",
+          "camera_xyz": [
+            -0.124226,
+            -0.071547,
+            0.167756
+          ]
+        },
+        {
+          "timestamp": "72863804786785",
+          "camera_xyz": [
+            -0.136922,
+            -0.042434,
+            0.228007
+          ]
+        },
+        {
+          "timestamp": "72875807554333",
+          "camera_xyz": [
+            -0.084954,
+            -0.102707,
+            0.219571
+          ]
+        },
+        {
+          "timestamp": "72877805630083",
+          "camera_xyz": [
+            -0.359029,
+            -0.012748,
+            -0.045208
+          ]
+        },
+        {
+          "timestamp": "72883804786336",
+          "camera_xyz": [
+            -0.127773,
+            -0.10324,
+            0.246546
+          ]
+        },
+        {
+          "timestamp": "72895806166842",
+          "camera_xyz": [
+            -0.113114,
+            -0.042768,
+            0.06208
+          ]
+        },
+        {
+          "timestamp": "72897804785676",
+          "camera_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ]
+        },
+        {
+          "timestamp": "72905804784472",
+          "camera_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ]
+        },
+        {
+          "timestamp": "72957804786497",
+          "camera_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ]
+        },
+        {
+          "timestamp": "72975806764297",
+          "camera_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ]
+        },
+        {
+          "timestamp": "72977804786464",
+          "camera_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ]
+        },
+        {
+          "timestamp": "72995804785348",
+          "camera_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ]
+        },
+        {
+          "timestamp": "72997806959599",
+          "camera_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ]
+        },
+        {
+          "timestamp": "73005806914853",
+          "camera_xyz": [
+            -0.117765,
+            -0.043999,
+            0.099215
+          ]
+        },
+        {
+          "timestamp": "73007804786395",
+          "camera_xyz": [
+            -0.102904,
+            -0.046399,
+            0.088219
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.102904,
+        -0.046399,
+        0.088219
+      ]
     },
     "scale": {
       "name": "scale",
@@ -2245,7 +2602,142 @@
       "first_seen": "72857807732824",
       "last_seen": "73007804786395",
       "observations": 16,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72857807732824",
+          "camera_xyz": [
+            -0.124226,
+            -0.071547,
+            0.167756
+          ]
+        },
+        {
+          "timestamp": "72875807554333",
+          "camera_xyz": [
+            -0.084954,
+            -0.102707,
+            0.219571
+          ]
+        },
+        {
+          "timestamp": "72877805630083",
+          "camera_xyz": [
+            -0.359029,
+            -0.012748,
+            -0.045208
+          ]
+        },
+        {
+          "timestamp": "72883804786336",
+          "camera_xyz": [
+            -0.127773,
+            -0.10324,
+            0.246546
+          ]
+        },
+        {
+          "timestamp": "72895806166842",
+          "camera_xyz": [
+            -0.113114,
+            -0.042768,
+            0.06208
+          ]
+        },
+        {
+          "timestamp": "72897804785676",
+          "camera_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ]
+        },
+        {
+          "timestamp": "72905804784472",
+          "camera_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ]
+        },
+        {
+          "timestamp": "72947804785867",
+          "camera_xyz": [
+            -0.178862,
+            -0.02217,
+            -0.014863
+          ]
+        },
+        {
+          "timestamp": "72955804786829",
+          "camera_xyz": [
+            -0.214065,
+            -0.02753,
+            -0.049291
+          ]
+        },
+        {
+          "timestamp": "72957804786497",
+          "camera_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ]
+        },
+        {
+          "timestamp": "72975806764297",
+          "camera_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ]
+        },
+        {
+          "timestamp": "72977804786464",
+          "camera_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ]
+        },
+        {
+          "timestamp": "72995804785348",
+          "camera_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ]
+        },
+        {
+          "timestamp": "72997806959599",
+          "camera_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ]
+        },
+        {
+          "timestamp": "73005806914853",
+          "camera_xyz": [
+            -0.117765,
+            -0.043999,
+            0.099215
+          ]
+        },
+        {
+          "timestamp": "73007804786395",
+          "camera_xyz": [
+            -0.102904,
+            -0.046399,
+            0.088219
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.102904,
+        -0.046399,
+        0.088219
+      ]
     },
     "table": {
       "name": "table",
@@ -2255,7 +2747,38 @@
       "first_seen": "72877805630083",
       "last_seen": "72905804784472",
       "observations": 3,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72877805630083",
+          "camera_xyz": [
+            -0.359029,
+            -0.012748,
+            -0.045208
+          ]
+        },
+        {
+          "timestamp": "72897804785676",
+          "camera_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ]
+        },
+        {
+          "timestamp": "72905804784472",
+          "camera_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.323943,
+        0.018902,
+        -0.091888
+      ]
     },
     "coffee_filter": {
       "name": "coffee filter",
@@ -2265,7 +2788,30 @@
       "first_seen": "72897804785676",
       "last_seen": "72905804784472",
       "observations": 2,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72897804785676",
+          "camera_xyz": [
+            -0.172754,
+            -0.038106,
+            0.071854
+          ]
+        },
+        {
+          "timestamp": "72905804784472",
+          "camera_xyz": [
+            -0.323943,
+            0.018902,
+            -0.091888
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.323943,
+        0.018902,
+        -0.091888
+      ]
     },
     "coffee_scale": {
       "name": "coffee scale",
@@ -2275,7 +2821,22 @@
       "first_seen": "72907804785931",
       "last_seen": "72907804785931",
       "observations": 1,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72907804785931",
+          "camera_xyz": [
+            -0.335959,
+            0.023896,
+            -0.079124
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.335959,
+        0.023896,
+        -0.079124
+      ]
     },
     "carafe": {
       "name": "glass carafe",
@@ -2285,7 +2846,38 @@
       "first_seen": "72907804785931",
       "last_seen": "72925804784565",
       "observations": 3,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72907804785931",
+          "camera_xyz": [
+            -0.335959,
+            0.023896,
+            -0.079124
+          ]
+        },
+        {
+          "timestamp": "72919804784853",
+          "camera_xyz": [
+            -0.112581,
+            -0.067701,
+            0.16309
+          ]
+        },
+        {
+          "timestamp": "72925804784565",
+          "camera_xyz": [
+            -0.141338,
+            -0.059307,
+            0.155046
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.141338,
+        -0.059307,
+        0.155046
+      ]
     },
     "white_mug": {
       "name": "white mug",
@@ -2295,7 +2887,30 @@
       "first_seen": "72907804785931",
       "last_seen": "73007804786395",
       "observations": 2,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72907804785931",
+          "camera_xyz": [
+            -0.335959,
+            0.023896,
+            -0.079124
+          ]
+        },
+        {
+          "timestamp": "73007804786395",
+          "camera_xyz": [
+            -0.102904,
+            -0.046399,
+            0.088219
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.102904,
+        -0.046399,
+        0.088219
+      ]
     },
     "wooden_scoop": {
       "name": "wooden scoop",
@@ -2305,7 +2920,30 @@
       "first_seen": "72919804784853",
       "last_seen": "72925804784565",
       "observations": 2,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72919804784853",
+          "camera_xyz": [
+            -0.112581,
+            -0.067701,
+            0.16309
+          ]
+        },
+        {
+          "timestamp": "72925804784565",
+          "camera_xyz": [
+            -0.141338,
+            -0.059307,
+            0.155046
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.141338,
+        -0.059307,
+        0.155046
+      ]
     },
     "coffee_jar": {
       "name": "coffee jar",
@@ -2315,7 +2953,30 @@
       "first_seen": "72927804785149",
       "last_seen": "72931804785276",
       "observations": 2,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72927804785149",
+          "camera_xyz": [
+            -0.062477,
+            -0.065411,
+            0.140591
+          ]
+        },
+        {
+          "timestamp": "72931804785276",
+          "camera_xyz": [
+            -0.129528,
+            -0.01445,
+            -0.059347
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.129528,
+        -0.01445,
+        -0.059347
+      ]
     },
     "coffee_scoop": {
       "name": "coffee scoop",
@@ -2325,7 +2986,54 @@
       "first_seen": "72927804785149",
       "last_seen": "72947804785867",
       "observations": 5,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72927804785149",
+          "camera_xyz": [
+            -0.062477,
+            -0.065411,
+            0.140591
+          ]
+        },
+        {
+          "timestamp": "72931804785276",
+          "camera_xyz": [
+            -0.129528,
+            -0.01445,
+            -0.059347
+          ]
+        },
+        {
+          "timestamp": "72937804785487",
+          "camera_xyz": [
+            -0.122526,
+            -0.035748,
+            0.015266
+          ]
+        },
+        {
+          "timestamp": "72945804784533",
+          "camera_xyz": [
+            -0.133862,
+            -0.017057,
+            -0.049832
+          ]
+        },
+        {
+          "timestamp": "72947804785867",
+          "camera_xyz": [
+            -0.178862,
+            -0.02217,
+            -0.014863
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.178862,
+        -0.02217,
+        -0.014863
+      ]
     },
     "coffee_container": {
       "name": "coffee container",
@@ -2335,7 +3043,22 @@
       "first_seen": "72947804785867",
       "last_seen": "72947804785867",
       "observations": 1,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72947804785867",
+          "camera_xyz": [
+            -0.178862,
+            -0.02217,
+            -0.014863
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.178862,
+        -0.02217,
+        -0.014863
+      ]
     },
     "lid": {
       "name": "lid",
@@ -2345,7 +3068,22 @@
       "first_seen": "72947804785867",
       "last_seen": "72947804785867",
       "observations": 1,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72947804785867",
+          "camera_xyz": [
+            -0.178862,
+            -0.02217,
+            -0.014863
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.178862,
+        -0.02217,
+        -0.014863
+      ]
     },
     "closed_coffee_container": {
       "name": "closed coffee container",
@@ -2355,7 +3093,22 @@
       "first_seen": "72955804786829",
       "last_seen": "72955804786829",
       "observations": 1,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72955804786829",
+          "camera_xyz": [
+            -0.214065,
+            -0.02753,
+            -0.049291
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.214065,
+        -0.02753,
+        -0.049291
+      ]
     },
     "coffee_mug": {
       "name": "coffee mug",
@@ -2365,7 +3118,30 @@
       "first_seen": "72957804786497",
       "last_seen": "72975806764297",
       "observations": 2,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72957804786497",
+          "camera_xyz": [
+            -0.159299,
+            -0.039598,
+            0.042273
+          ]
+        },
+        {
+          "timestamp": "72975806764297",
+          "camera_xyz": [
+            -0.125972,
+            -0.036275,
+            0.310259
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.125972,
+        -0.036275,
+        0.310259
+      ]
     },
     "mug": {
       "name": "mug",
@@ -2375,7 +3151,30 @@
       "first_seen": "72977804786464",
       "last_seen": "72995804785348",
       "observations": 2,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72977804786464",
+          "camera_xyz": [
+            -0.067255,
+            -0.079418,
+            0.242177
+          ]
+        },
+        {
+          "timestamp": "72995804785348",
+          "camera_xyz": [
+            -0.05478,
+            -0.068064,
+            0.272386
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.05478,
+        -0.068064,
+        0.272386
+      ]
     },
     "white_cup": {
       "name": "white cup",
@@ -2385,7 +3184,22 @@
       "first_seen": "72997806959599",
       "last_seen": "72997806959599",
       "observations": 1,
-      "provenance": "caption.objects"
+      "provenance": "caption.objects",
+      "camera_trail": [
+        {
+          "timestamp": "72997806959599",
+          "camera_xyz": [
+            -0.061283,
+            -0.067138,
+            0.277602
+          ]
+        }
+      ],
+      "last_seen_camera_xyz": [
+        -0.061283,
+        -0.067138,
+        0.277602
+      ]
     }
   },
   "relations": [
@@ -3974,6 +4788,7 @@
     "objects": "Caption object annotations in annotation.hdf5.",
     "relations": "Rule-based extraction from object lists, interaction text, and action intervals.",
     "camera_pose": "SLAM trans_xyz and quat_wxyz matched by timestamp when present.",
+    "camera_trail": "Wearer camera position at each sighting; an egocentric proxy for object location, not a triangulated object position.",
     "detector_hook": "Optional --detections-json merges detector/tracker object records with caption objects."
   }
 }

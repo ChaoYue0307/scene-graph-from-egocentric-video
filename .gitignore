@@ -18,6 +18,9 @@ outputs/*
 !outputs/visual_detector_graph/query_results.json
 !outputs/visual_detector_graph/schema.json
 !outputs/visual_detector_graph/graph_comparison.json
+!outputs/qa_eval/
+outputs/qa_eval/*
+!outputs/qa_eval/qa_results.json
 /data/
 *.hdf5
 *.mp4
